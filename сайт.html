@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Зимний Лес</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #b0c4de; /* Серо-голубой фон, напоминающий зимний лес */
+            color: #2f4f4f; /* Темно-серый цвет текста */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #4682b4; /* Цвет, напоминающий заледеневшее море */
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+            color: white;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            width: 100%;
+        }
+        .content {
+            background-color: #f0f8ff; /* Очень светлый фон для контента */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .highlight {
+            color: #ff4500; /* Алый цвет для акцентов */
+            font-weight: bold;
+        }
+        img {
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+             img {
+                 width: 100%;
+                 border-radius: 10px;
+                 object-fit: cover;
+             }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Зимний Лес</h1>
+</header>
+
+<div class="grid-container">
+    <div class="content">
+        <h2>Добро пожаловать в зимний лес!</h2>
+        <p>Здесь вы сможете насладиться красотой природы в её зимнем обличии. Погрузитесь в атмосферу тишины и спокойствия.</p>
+        <p>Не забудьте обратить внимание на <span class="highlight">алые акценты</span>, которые добавляют яркости и контраста в этот холодный мир.</p>
+    </div>
+    <img src="https://source.unsplash.com/600x400/?winter-forest" alt="Зимний лес">
+
+    <img src="https://source.unsplash.com/600x400/?icy-sea" alt="Заледеневшее море">
+    <div class="content">
+        <h2>Заледеневшее море</h2>
+        <p>Заледеневшее море — это невероятное зрелище, где ледяные блоки создают уникальные формы и текстуры.</p>
+        <p>Наблюдение за этим пейзажем может быть вдохновляющим и умиротворяющим.</p>
+    </div>
+
+    <div class="content">
+        <h2>Снежные пейзажи</h2>
+        <p>Снежные пейзажи завораживают своей красотой и спокойствием. Каждый шаг по свежему снегу — это настоящее удовольствие.</p>
+        <p>Погрузитесь в мир зимней сказки и насладитесь каждым моментом.</p>
+    </div>
+    <img src="https://source.unsplash.com/600x400/?snow-landscape" alt="Снежный пейзаж">
+
+    <img src="https://source.unsplash.com/600x400/?frozen-lake" alt="Замёрзшее озеро">
+    <div class="content">
+        <h2>Замёрзшее озеро</h2>
+        <p>Замёрзшие озёра создают удивительные пейзажи и предлагают уникальные возможности для отдыха и развлечений.</p>
+        <p>Здесь можно покататься на коньках или просто насладиться красотой окружающей природы.</p>
+    </div>
+
+  </body>
+
+</html>
