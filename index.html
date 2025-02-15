@@ -96,7 +96,12 @@
             object-fit: cover;
         }
 
+        .phone {
+            display: none;
+        }
+
         @media (max-width: 500px) {
+            
             header {
                 height: 50px;
             }
@@ -164,6 +169,34 @@
             nav a:hover {
                 background: rgba(255, 255, 255, 0.2); /* Эффект при наведении */
             }
+
+            .grid-container {
+                display: inline;
+                margin: auto;
+                margin-top: 5%;
+                padding: 0;
+
+            }
+
+            .content {
+                margin: 3px 3px 10% 3px;
+                
+
+            }
+
+            h2 {
+                font-size: larger;
+            }
+
+            .phone{
+                display: block;
+            }
+
+            .phone-del{
+                display: none;
+                
+            }
+
             }
 
     </style>
@@ -194,28 +227,41 @@
             <h2>Добро пожаловать в зимний лес!</h2>
             <p>Здесь вы сможете насладиться красотой природы в её зимнем обличии. Погрузитесь в атмосферу тишины и спокойствия.</p>
             <p>Не забудьте обратить внимание на <span class="highlight">алые акценты</span>, которые добавляют яркости и контраста в этот холодный мир.</p>
+            <img class="phone" src="https://source.unsplash.com/600x400/?winter-forest" alt="Зимний лес">
+            
         </div>
-        <img src="https://source.unsplash.com/600x400/?winter-forest" alt="Зимний лес">
+        <img class="phone-del" src="https://source.unsplash.com/600x400/?winter-forest" alt="Зимний лес">
 
-        <img src="https://source.unsplash.com/600x400/?icy-sea" alt="Заледеневшее море">
+
+        <img class="phone-del" src="https://source.unsplash.com/600x400/?icy-sea" alt="Заледеневшее море">
+
         <div class="content">
             <h2>Заледеневшее море</h2>
             <p>Заледеневшее море — это невероятное зрелище, где ледяные блоки создают уникальные формы и текстуры.</p>
             <p>Наблюдение за этим пейзажем может быть вдохновляющим и умиротворяющим.</p>
+            <img class="phone" src="https://source.unsplash.com/600x400/?icy-sea" alt="Заледеневшее море">
         </div>
+
+
 
         <div class="content">
             <h2>Снежные пейзажи</h2>
             <p>Снежные пейзажи завораживают своей красотой и спокойствием. Каждый шаг по свежему снегу — это настоящее удовольствие.</p>
             <p>Погрузитесь в мир зимней сказки и насладитесь каждым моментом.</p>
-        </div>
-        <img src="https://source.unsplash.com/600x400/?snow-landscape" alt="Снежный пейзаж">
+            <img class="phone" src="https://source.unsplash.com/600x400/?snow-landscape" alt="Снежный пейзаж">
 
-        <img src="https://source.unsplash.com/600x400/?frozen-lake" alt="Замёрзшее озеро">
+        </div>
+        <img class="phone-del" src="https://source.unsplash.com/600x400/?snow-landscape" alt="Снежный пейзаж">
+
+
+        
+        <img class="phone-del" src="https://source.unsplash.com/600x400/?frozen-lake" alt="Замёрзшее озеро">
         <div class="content">
             <h2>Замёрзшее озеро</h2>
             <p>Замёрзшие озёра создают удивительные пейзажи и предлагают уникальные возможности для отдыха и развлечений.</p>
             <p>Здесь можно покататься на коньках или просто насладиться красотой окружающей природы.</p>
+            <img class="phone" src="https://source.unsplash.com/600x400/?frozen-lake" alt="Замёрзшее озеро">
+
         </div>
     </div>
 
