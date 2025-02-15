@@ -10,7 +10,6 @@
             border: none;
         }
 
-
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -22,16 +21,30 @@
             justify-content: center;
             min-height: 100vh;
         }
+
         header {
             background-color: #4682b4; /* Цвет, напоминающий заледеневшее море */
             width: 100%;
+            margin: auto;
+        }
+
+        .menu {
+            display: none;
+            width: 0;
+            height: 0;
+            margin: 0;
+            padding: 0;
+
+        }
+
+        nav {
             text-align: center;
             color: white;
             display: flex;
             justify-content: center;
         }
 
-        header a {
+        nav a {
             margin: auto;
             text-decoration: none;
             color: #fff;
@@ -40,16 +53,22 @@
             font-size: larger;
         }
 
-        header a:hover {
+        nav a:hover {
             background-color: #346791;
         }
 
+        .sticker {
+            max-width: 25px;
+            max-height: 25px;
+            transform: translateY(20%); /* Поднимаем на половину высоты */
 
+        }
 
         h1 {
             margin: 0;
             font-size: 2.5em;
         }
+
         .grid-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -58,74 +77,157 @@
             max-width: 1200px;
             width: 100%;
         }
+
         .content {
             background-color: #f0f8ff; /* Очень светлый фон для контента */
             border-radius: 10px;
             padding: 20px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
+
         .highlight {
             color: #ff4500; /* Алый цвет для акцентов */
             font-weight: bold;
         }
+
         img {
             width: 100%;
             border-radius: 10px;
             object-fit: cover;
         }
 
-             img {
-                 width: 100%;
-                 border-radius: 10px;
-                 object-fit: cover;
-             }
+        @media (max-width: 500px) {
+            header {
+                height: 50px;
+            }
+
+            .menu {
+                position: relative;
+                width: 22px;
+                height: 15px;
+                transform: translateY(100%); /* Поднимаем на половину высоты */
+                margin-left: 3%;
+                cursor: pointer;
+                z-index: 10; /* Чтобы меню было выше остальных элементов */
+                display: block;
+            }
+
+            .bar {
+                background-color: #ffffff; /* Цвет полосок */
+                height: 2px;
+                width: 100%;
+                transition: all 0.3s ease; /* Анимация */
+                position: absolute;
+                left: 0;
+            }
+            .bar1 {
+                top: 0;
+            }
+            .bar2 {
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            .bar3 {
+                bottom: 0;
+            }
+            .menu.active .bar1 {
+                transform: rotate(45deg) translate(5px, 5px); /* Поворот первой полоски */
+            }
+            .menu.active .bar2 {
+                opacity: 0; /* Скрыть среднюю полоску */
+            }
+            .menu.active .bar3 {
+                transform: rotate(-45deg) translate(5px, -5px); /* Поворот третьей полоски */
+            }
+
+            nav {
+                display: none; /* Скрыть навигацию по умолчанию */
+                flex-direction: column;
+                position: absolute;
+                top: 50px; /* Положение меню */
+                background-color: #4682b4; /* Цвет фона меню */
+                border-radius: 5px;
+                padding: 10px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                z-index: 5; /* Чтобы меню было ниже бургер-меню */
+            }
+            nav.active {
+                display: flex; /* Показать меню, когда оно активно */
+            }
+            nav a {
+                color: white;
+                text-decoration: none;
+                padding: 10px;
+                transition: background 0.3s;
+                margin-left: 0;
+            }
+            nav a:hover {
+                background: rgba(255, 255, 255, 0.2); /* Эффект при наведении */
+            }
+            }
 
     </style>
 </head>
 <body>
 
 <header>
+    <div class="menu" id="burger-menu">
+        <div class="bar bar1"></div>
+        <div class="bar bar2"></div>
+        <div class="bar bar3"></div>
+    </div>
 
-    <a href="#"><img class="sticker" src="img/">Мемы</a>
-    <a href="#"><img class="sticker" src="img/">Пасты</a>
-    <a href="#"><img class="sticker" src="img/">Видево</a>
-    <a href="#"><img class="sticker" src="img/">Гифки</a>
-    <a href="#"><img class="sticker" src="img/">Войсы</a>
-    <a href="#"><img class="sticker" src="img/">Список</a>
-
+    <nav id="nav-menu">
+        <a href="#"><img class="sticker" src="img/s1.webp">Мемы</a>
+        <a href="#"><img class="sticker" src="img/s1.webp">Пасты</a>
+        <a href="#"><img class="sticker" src="img/s1.webp">Видево</a>
+        <a href="#"><img class="sticker" src="img/s1.webp">Гифки</a>
+        <a href="#"><img class="sticker" src="img/s1.webp">Войсы</a>
+        <a href="#"><img class="sticker" src="img/s1.webp">Список</a>
+    </nav>
 
 
 </header>
 
-<div class="grid-container">
-    <div class="content">
-        <h2>Добро пожаловать в зимний лес!</h2>
-        <p>Здесь вы сможете насладиться красотой природы в её зимнем обличии. Погрузитесь в атмосферу тишины и спокойствия.</p>
-        <p>Не забудьте обратить внимание на <span class="highlight">алые акценты</span>, которые добавляют яркости и контраста в этот холодный мир.</p>
-    </div>
-    <img src="https://source.unsplash.com/600x400/?winter-forest" alt="Зимний лес">
+    <div class="grid-container">
+        <div class="content">
+            <h2>Добро пожаловать в зимний лес!</h2>
+            <p>Здесь вы сможете насладиться красотой природы в её зимнем обличии. Погрузитесь в атмосферу тишины и спокойствия.</p>
+            <p>Не забудьте обратить внимание на <span class="highlight">алые акценты</span>, которые добавляют яркости и контраста в этот холодный мир.</p>
+        </div>
+        <img src="https://source.unsplash.com/600x400/?winter-forest" alt="Зимний лес">
 
-    <img src="https://source.unsplash.com/600x400/?icy-sea" alt="Заледеневшее море">
-    <div class="content">
-        <h2>Заледеневшее море</h2>
-        <p>Заледеневшее море — это невероятное зрелище, где ледяные блоки создают уникальные формы и текстуры.</p>
-        <p>Наблюдение за этим пейзажем может быть вдохновляющим и умиротворяющим.</p>
+        <img src="https://source.unsplash.com/600x400/?icy-sea" alt="Заледеневшее море">
+        <div class="content">
+            <h2>Заледеневшее море</h2>
+            <p>Заледеневшее море — это невероятное зрелище, где ледяные блоки создают уникальные формы и текстуры.</p>
+            <p>Наблюдение за этим пейзажем может быть вдохновляющим и умиротворяющим.</p>
+        </div>
+
+        <div class="content">
+            <h2>Снежные пейзажи</h2>
+            <p>Снежные пейзажи завораживают своей красотой и спокойствием. Каждый шаг по свежему снегу — это настоящее удовольствие.</p>
+            <p>Погрузитесь в мир зимней сказки и насладитесь каждым моментом.</p>
+        </div>
+        <img src="https://source.unsplash.com/600x400/?snow-landscape" alt="Снежный пейзаж">
+
+        <img src="https://source.unsplash.com/600x400/?frozen-lake" alt="Замёрзшее озеро">
+        <div class="content">
+            <h2>Замёрзшее озеро</h2>
+            <p>Замёрзшие озёра создают удивительные пейзажи и предлагают уникальные возможности для отдыха и развлечений.</p>
+            <p>Здесь можно покататься на коньках или просто насладиться красотой окружающей природы.</p>
+        </div>
     </div>
 
-    <div class="content">
-        <h2>Снежные пейзажи</h2>
-        <p>Снежные пейзажи завораживают своей красотой и спокойствием. Каждый шаг по свежему снегу — это настоящее удовольствие.</p>
-        <p>Погрузитесь в мир зимней сказки и насладитесь каждым моментом.</p>
-    </div>
-    <img src="https://source.unsplash.com/600x400/?snow-landscape" alt="Снежный пейзаж">
-
-    <img src="https://source.unsplash.com/600x400/?frozen-lake" alt="Замёрзшее озеро">
-    <div class="content">
-        <h2>Замёрзшее озеро</h2>
-        <p>Замёрзшие озёра создают удивительные пейзажи и предлагают уникальные возможности для отдыха и развлечений.</p>
-        <p>Здесь можно покататься на коньках или просто насладиться красотой окружающей природы.</p>
-    </div>
-</div>
+    <script>
+        const burgerMenu = document.getElementById('burger-menu');
+        const navMenu = document.getElementById('nav-menu');
+    
+        burgerMenu.addEventListener('click', () => {
+            burgerMenu.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    </script>
   </body>
 
 </html>
