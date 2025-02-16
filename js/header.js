@@ -19,6 +19,11 @@ document.addEventListener('DOMContentLoaded', function() {
         menuDiv.appendChild(bar);
     }
 
+    menuDiv.addEventListener('click', function() {
+        const nav = document.getElementById('nav-menu');
+        nav.classList.toggle('active'); // Добавьте/удалите класс для показа/скрытия меню
+    });
+
     // Добавляем div меню в header
     header.appendChild(menuDiv);
 
