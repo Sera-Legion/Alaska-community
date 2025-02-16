@@ -1,6 +1,5 @@
 * {
     padding: 0;
-    border: none;
 }
 
 body {
@@ -21,7 +20,10 @@ header {
     width: 100%;
     margin: auto;
     margin-top: 0;
+    padding-bottom: 0;
     z-index: 10;
+    top: 0; 
+    position: absolute;
 }
 
 .menu {
@@ -45,8 +47,10 @@ nav a {
     text-decoration: none;
     color: #fff;
     padding: 1%;
+    padding-bottom: 2%;
+    padding-right: 30px;
     text-align: left;
-    font-size: larger;
+    font-size: 22px;
 }
 
 nav a:hover {
@@ -54,10 +58,9 @@ nav a:hover {
 }
 
 .sticker {
-    max-width: 25px;
-    max-height: 25px;
-    transform: translateY(20%); /* Поднимаем на половину высоты */
-    border-radius: 10px;
+    max-width: 50px;
+    max-height: 50px;
+    transform: translateY(30%); /* Поднимаем на половину высоты */
 
 }
 
@@ -68,7 +71,12 @@ nav a:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 0; /* Убедитесь, что изображения ниже кнопок */
+    z-index: 1; /* Убедитесь, что изображения ниже кнопок */
+}
+
+.grid-container {
+    margin-top: 10%;
+
 }
 
 .left, .right {
@@ -98,71 +106,99 @@ nav a:hover {
             
     header {
         height: 50px;
+        position: fixed;
+        z-index: 100;
     }
 
     .menu {
         position: relative;
-        width: 22px;
-        height: 15px;
-        transform: translateY(100%); /* Поднимаем на половину высоты */
-        margin-left: 3%;
         cursor: pointer;
         z-index: 10; /* Чтобы меню было выше остальных элементов */
         display: block;
     }
 
-    .bar {
-        background-color: #ffffff; /* Цвет полосок */
-        height: 2px;
-        width: 100%;
-        transition: all 0.3s ease; /* Анимация */
-        position: absolute;
-        left: 0;
+    .zakladka {
+        width: 0; 
+        height: 0; 
+        margin-left: 0;
+        border-width: 35px 20px 15px;
+        border-style: solid;
+        border-color: rgba(1, 7, 15, 0.7) rgba(1, 7, 15, 0.7) transparent;
+        background-color: #00000000;
+        transform: translateY(-20%); /* Поднимаем на половину высоты */
+        margin-left: 10px;
+        
+
+
     }
-    .bar1 {
-        top: 0;
+
+    #zad {
+        width: 0;
+        text-decoration: none;
     }
-    .bar2 {
-        top: 50%;
-        transform: translateY(-50%);
-    }
-    .bar3 {
-        bottom: 0;
-    }
-    .menu.active .bar1 {
-        transform: rotate(45deg) translate(5px, 5px); /* Поворот первой полоски */
-    }
-    .menu.active .bar2 {
-        opacity: 0; /* Скрыть среднюю полоску */
-    }
-    .menu.active .bar3 {
-        transform: rotate(-45deg) translate(5px, -5px); /* Поворот третьей полоски */
-    }
+
+    @keyframes magic {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+        
+      }
 
     nav {
         display: none; /* Скрыть навигацию по умолчанию */
-        flex-direction: column;
         position: absolute;
-        top: 50px; /* Положение меню */
+        top: 100px; /* Положение меню */
+        padding: 0px;
+        left: 10px;
         background-color: #01070fd7;  /* Цвет фона меню */
-        border-radius: 5px;
-        padding: 10px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         z-index: 5; /* Чтобы меню было ниже бургер-меню */
+        box-shadow: none;
     }
+
     #nav-menu.active {
         display: flex; /* Показать меню, когда оно активно */
+        animation: magic 0.2s;
+        width: 0; 
+        height: 0; 
+        border-width: 550px 20px 15px;
+        border-style: solid;
+        border-color: rgba(1, 7, 15, 0.9) rgba(1, 7, 15, 0.9) transparent;
+        background-color: #ff000000;
+        transform: translateY(-50%); /* Поднимаем на половину высоты */
+
     }
     nav a {
-        color: white;
+        color: rgba(255, 255, 255, 0);
         text-decoration: none;
-        padding: 10px;
+        padding: 0;
         transition: background 0.3s;
         margin-left: 0;
+        z-index: 100;
+        font-size: 5px;
+        position: absolute;
+        top: -330px;
     }
-    nav a:hover {
-        background: rgba(255, 255, 255, 0.2); /* Эффект при наведении */
-    } 
+
+    nav a:nth-child(1) {
+        top: -280px;
+    }
+
+    nav a:nth-child(2) {
+        top: -230px;
+    }
+
+    nav a:nth-child(3) {
+        top: -180px;
+    }
+
+    nav a:nth-child(4) {
+        top: -130px;
+    }
+
+    nav a:nth-child(5) {
+        top: -80px;
+    }
+ 
     .mainPng {
         display: none;
     }
