@@ -21,6 +21,7 @@ header {
     width: 100%;
     margin: auto;
     margin-top: 0;
+    z-index: 10;
 }
 
 .menu {
@@ -91,6 +92,8 @@ nav a:hover {
 
 }
 
+
+
 @media (max-width: 500px) {
             
     header {
@@ -147,7 +150,7 @@ nav a:hover {
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         z-index: 5; /* Чтобы меню было ниже бургер-меню */
     }
-    nav.active {
+    #nav-menu.active {
         display: flex; /* Показать меню, когда оно активно */
     }
     nav a {
@@ -159,8 +162,7 @@ nav a:hover {
     }
     nav a:hover {
         background: rgba(255, 255, 255, 0.2); /* Эффект при наведении */
-    }
-
+    } 
     .mainPng {
         display: none;
     }
