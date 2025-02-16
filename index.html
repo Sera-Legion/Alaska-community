@@ -13,17 +13,18 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #b0c4de; /* Серо-голубой фон, напоминающий зимний лес */
             color: #2f4f4f; /* Темно-серый цвет текста */
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
+            background: linear-gradient(122.79deg, #B44A58 -13.55%, #637893 39.83%, #6880A0 77.69%);
+
         }
 
         header {
-            background-color: #4682b4; /* Цвет, напоминающий заледеневшее море */
+            background: linear-gradient(to right, #A13D4B, #385B8A);
             width: 100%;
             margin: auto;
         }
@@ -64,6 +65,38 @@
 
         }
 
+        .mainPng {
+            display: flex;
+            justify-content: space-between; /* Распределяем изображения по бокам */
+            position: fixed; /* Абсолютное позиционирование */
+            top: 58%; /* Центруем по вертикали */
+            left: 0;
+            right: 0;
+            transform: translateY(-50%); /* Поднимаем на половину высоты */
+            z-index: 0; /* Убедитесь, что изображения ниже кнопок */
+        }
+
+        .left, .right {
+
+            z-index: 0;
+            background-size: cover; /* Заполнение фона */
+            background-position: center; /* Центрируем изображение */
+        }
+
+        .right {
+            background-image: url('img/jopa.png'); /* Убедитесь, что это правильный путь к вашему изображению */
+            height: 600px;
+            width: 600px;
+            transform: translateY(30%); /* Поднимаем на половину высоты */
+        }
+        
+        .left {
+            background-image: url('img/clown.png'); /* Убедитесь, что это правильный путь к вашему изображению */
+            width: 1000px;
+            height: 700px;
+
+        }
+
         h1 {
             margin: 0;
             font-size: 2.5em;
@@ -79,10 +112,11 @@
         }
 
         .content {
-            background-color: #f0f8ff; /* Очень светлый фон для контента */
+            background-color: #01070F45; /* Очень светлый фон для контента */
             border-radius: 10px;
             padding: 20px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            color: #fff;
         }
 
         .highlight {
@@ -170,6 +204,10 @@
                 background: rgba(255, 255, 255, 0.2); /* Эффект при наведении */
             }
 
+            .mainPng {
+                display: none;
+            }
+
             .grid-container {
                 display: inline;
                 margin: auto;
@@ -221,6 +259,11 @@
 
 
 </header>
+
+    <div class="mainPng">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
 
     <div class="grid-container">
         <div class="content">
