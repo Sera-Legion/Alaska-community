@@ -45,12 +45,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Массив ссылок с изображениями
     const links = [
-        { text: 'Мемы', href: '../pages/mem.html', imgSrc: '../img/s1.svg' },
-        { text: 'Пасты', href: '#', imgSrc: '../img/s1.svg' },
-        { text: 'Видево', href: '#', imgSrc: '../img/s1.svg' },
-        { text: 'Гифки', href: '#', imgSrc: '../img/s1.svg' },
-        { text: 'Войсы', href: '#', imgSrc: '../img/s1.svg' },
-        { text: 'Список', href: '#', imgSrc: '../img/s1.svg' }
+        { text: 'Мемы', href: '../pages/mem.html', imgSrc: '../img/s1.png' },
+        { text: 'Пасты', href: '#', imgSrc: '../img/s1.png' },
+        { text: 'Видево', href: '#', imgSrc: '../img/s1.png' },
+        { text: 'Гифки', href: '#', imgSrc: '../img/s1.png' },
+        { text: 'Войсы', href: '#', imgSrc: '../img/s1.png' },
+        { text: 'Список', href: '#', imgSrc: '../img/s1.png' }
     ];
 
     // Создаем ссылки
