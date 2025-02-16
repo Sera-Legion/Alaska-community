@@ -1,0 +1,163 @@
+* {
+    padding: 0;
+    border: none;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #2f4f4f; /* Темно-серый цвет текста */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(122.79deg, #B44A58 -13.55%, #637893 39.83%, #6880A0 77.69%);
+
+}
+
+header {
+    background: linear-gradient(to right, #A13D4B, #385B8A);
+    width: 100%;
+    margin: auto;
+    margin-top: 0;
+}
+
+.menu {
+    display: none;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+
+}
+
+nav {
+    text-align: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    margin: auto;
+    text-decoration: none;
+    color: #fff;
+    padding: 1%;
+    text-align: left;
+    font-size: larger;
+}
+
+nav a:hover {
+    background-color: #01070F45; 
+}
+
+.sticker {
+    max-width: 25px;
+    max-height: 25px;
+    transform: translateY(20%); /* Поднимаем на половину высоты */
+    border-radius: 10px;
+
+}
+
+.mainPng {
+    display: flex;
+    justify-content: space-between; /* Распределяем изображения по бокам */
+    position: fixed; /* Абсолютное позиционирование */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0; /* Убедитесь, что изображения ниже кнопок */
+}
+
+.left, .right {
+
+    z-index: 0;
+    background-size: cover; /* Заполнение фона */
+    background-position: center; /* Центрируем изображение */
+}
+
+.right {
+    background-image: url('../img/jopa.png'); /* Убедитесь, что это правильный путь к вашему изображению */
+    height: 600px;
+    width: 600px;
+    transform: translateY(20%); /* Поднимаем на половину высоты */
+}
+
+.left {
+    background-image: url('../img/clown.png'); /* Убедитесь, что это правильный путь к вашему изображению */
+    width: 1000px;
+    height: 700px;
+
+}
+
+@media (max-width: 500px) {
+            
+    header {
+        height: 50px;
+    }
+
+    .menu {
+        position: relative;
+        width: 22px;
+        height: 15px;
+        transform: translateY(100%); /* Поднимаем на половину высоты */
+        margin-left: 3%;
+        cursor: pointer;
+        z-index: 10; /* Чтобы меню было выше остальных элементов */
+        display: block;
+    }
+
+    .bar {
+        background-color: #ffffff; /* Цвет полосок */
+        height: 2px;
+        width: 100%;
+        transition: all 0.3s ease; /* Анимация */
+        position: absolute;
+        left: 0;
+    }
+    .bar1 {
+        top: 0;
+    }
+    .bar2 {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .bar3 {
+        bottom: 0;
+    }
+    .menu.active .bar1 {
+        transform: rotate(45deg) translate(5px, 5px); /* Поворот первой полоски */
+    }
+    .menu.active .bar2 {
+        opacity: 0; /* Скрыть среднюю полоску */
+    }
+    .menu.active .bar3 {
+        transform: rotate(-45deg) translate(5px, -5px); /* Поворот третьей полоски */
+    }
+
+    nav {
+        display: none; /* Скрыть навигацию по умолчанию */
+        flex-direction: column;
+        position: absolute;
+        top: 50px; /* Положение меню */
+        background-color: #01070fd7;  /* Цвет фона меню */
+        border-radius: 5px;
+        padding: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        z-index: 5; /* Чтобы меню было ниже бургер-меню */
+    }
+    nav.active {
+        display: flex; /* Показать меню, когда оно активно */
+    }
+    nav a {
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+        transition: background 0.3s;
+        margin-left: 0;
+    }
+    nav a:hover {
+        background: rgba(255, 255, 255, 0.2); /* Эффект при наведении */
+    }
+}
