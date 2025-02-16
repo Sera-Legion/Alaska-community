@@ -20,6 +20,7 @@
             padding: 20px;
             max-width: 1200px;
             width: 100%;
+            
         }
 
         .content {
@@ -41,11 +42,13 @@
 
         @media (max-width: 700px) {
 
+
+
             .grid-container {
                 display: inline;
                 margin: auto;
-                margin-top: 5%;
                 padding: 0;
+                margin-top: 25%;
 
             }
 
@@ -75,18 +78,16 @@
 <body>
     <header>
         <div class="menu" id="burger-menu">
-            <div class="bar bar1"></div>
-            <div class="bar bar2"></div>
-            <div class="bar bar3"></div>
+            <div class="zakladka" id="zad"></div>
         </div>
     
         <nav id="nav-menu">
-            <a href="pages/mem.html"><img class="sticker" src="img/s1.webp">Мемы</a>
-            <a href="#"><img class="sticker" src="img/s1.webp">Пасты</a>
-            <a href="#"><img class="sticker" src="img/s1.webp">Видево</a>
-            <a href="#"><img class="sticker" src="img/s1.webp">Гифки</a>
-            <a href="#"><img class="sticker" src="img/s1.webp">Войсы</a>
-            <a href="#"><img class="sticker" src="img/s1.webp">Список</a>
+            <a href="pages/mem.html"><img class="sticker" src="img/s1.svg">Мемы</a>
+            <a href="#"><img class="sticker" src="img/s1.svg">Пасты</a>
+            <a href="#"><img class="sticker" src="img/s1.svg">Видево</a>
+            <a href="#"><img class="sticker" src="img/s1.svg">Гифки</a>
+            <a href="#"><img class="sticker" src="img/s1.svg">Войсы</a>
+            <a href="#"><img class="sticker" src="img/s1.svg">Список</a>
         </nav>
     
     
@@ -139,7 +140,29 @@
         <div class="right"></div>
     </div>
 
-    <script src="js/header.js"></script>
+    <script>
+const burgerMenu = document.getElementById('burger-menu');
+const navMenu = document.getElementById('nav-menu');
+const zakladka = document.getElementById('zad');
+
+// Исходный цвет границы
+const originalBorderColor = "rgba(1, 7, 15, 0.7) rgba(1, 7, 15, 0.7) transparent";
+
+burgerMenu.addEventListener('click', () => {
+    burgerMenu.classList.toggle('active');
+    navMenu.classList.toggle('active');
+
+    // Проверяем текущий цвет границы и переключаем его
+    if (zakladka.style.borderColor === "rgba(1, 7, 15, 0) rgba(1, 7, 15, 0) transparent") {
+        // Если текущий цвет границы соответствует заданному, меняем его обратно
+        zakladka.style.borderColor = originalBorderColor; // Установите исходный цвет границы
+    } else {
+        // В противном случае меняем цвет границы на заданный
+        zakladka.style.borderColor = "rgba(1, 7, 15, 0) rgba(1, 7, 15, 0) transparent";
+    }
+});
+
+    </script>
   </body>
 
 </html>
