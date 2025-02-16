@@ -160,4 +160,8 @@ nav a:hover {
     nav a:hover {
         background: rgba(255, 255, 255, 0.2); /* Эффект при наведении */
     }
+
+    .mainPng {
+        display: none;
+    }
 }
