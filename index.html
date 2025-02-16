@@ -69,10 +69,9 @@
             display: flex;
             justify-content: space-between; /* Распределяем изображения по бокам */
             position: fixed; /* Абсолютное позиционирование */
-            top: 58%; /* Центруем по вертикали */
             left: 0;
             right: 0;
-            transform: translateY(-50%); /* Поднимаем на половину высоты */
+            bottom: 0;
             z-index: 0; /* Убедитесь, что изображения ниже кнопок */
         }
 
@@ -87,7 +86,12 @@
             background-image: url('img/jopa.png'); /* Убедитесь, что это правильный путь к вашему изображению */
             height: 600px;
             width: 600px;
-            transform: translateY(30%); /* Поднимаем на половину высоты */
+            transform: translateY(20%); /* Поднимаем на половину высоты */
+            
+
+            
+
+
         }
         
         .left {
@@ -260,10 +264,7 @@
 
 </header>
 
-    <div class="mainPng">
-        <div class="left"></div>
-        <div class="right"></div>
-    </div>
+
 
     <div class="grid-container">
         <div class="content">
@@ -307,7 +308,10 @@
 
         </div>
     </div>
-
+    <div class="mainPng">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
     <script>
         const burgerMenu = document.getElementById('burger-menu');
         const navMenu = document.getElementById('nav-menu');
