@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-
     if (document.querySelector('header')) {
         return; // Если header существует, выходим из функции
     }
@@ -13,15 +12,28 @@ document.addEventListener('DOMContentLoaded', function() {
     menuDiv.id = 'burger-menu';
 
     // Создаем полосы для бургер-меню
-    for (let i = 1; i <= 3; i++) {
-        const bar = document.createElement('div');
-        bar.className = `bar bar${i}`;
-        menuDiv.appendChild(bar);
-    }
+    const zazakladka = document.createElement('div');
+    zazakladka.className = "zakladka";
+    zazakladka.id = "zad";
+    menuDiv.appendChild(zazakladka);
 
+    // Добавляем обработчик клика на меню
     menuDiv.addEventListener('click', function() {
         const nav = document.getElementById('nav-menu');
         nav.classList.toggle('active'); // Добавьте/удалите класс для показа/скрытия меню
+
+        // Здесь добавляем логику изменения цвета границы
+        const zakladka = document.getElementById('zad');
+        const originalBorderColor = "rgba(1, 7, 15, 0.7) rgba(1, 7, 15, 0.7) transparent";
+
+        // Проверяем текущий цвет границы и переключаем его
+        if (zakladka.style.borderColor === "rgba(1, 7, 15, 0) rgba(1, 7, 15, 0) transparent") {
+            // Если текущий цвет границы соответствует заданному, меняем его обратно
+            zakladka.style.borderColor = originalBorderColor; // Установите исходный цвет границы
+        } else {
+            // В противном случае меняем цвет границы на заданный
+            zakladka.style.borderColor = "rgba(1, 7, 15, 0) rgba(1, 7, 15, 0) transparent";
+        }
     });
 
     // Добавляем div меню в header
@@ -33,12 +45,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Массив ссылок с изображениями
     const links = [
-        { text: 'Мемы', href: '../pages/mem.html', imgSrc: '../img/s1.webp' },
-        { text: 'Пасты', href: '#', imgSrc: '../img/s1.webp' },
-        { text: 'Видево', href: '#', imgSrc: '../img/s1.webp' },
-        { text: 'Гифки', href: '#', imgSrc: '../img/s1.webp' },
-        { text: 'Войсы', href: '#', imgSrc: '../img/s1.webp' },
-        { text: 'Список', href: '#', imgSrc: '../img/s1.webp' }
+        { text: 'Мемы', href: '../pages/mem.html', imgSrc: '../img/s1.svg' },
+        { text: 'Пасты', href: '#', imgSrc: '../img/s1.svg' },
+        { text: 'Видево', href: '#', imgSrc: '../img/s1.svg' },
+        { text: 'Гифки', href: '#', imgSrc: '../img/s1.svg' },
+        { text: 'Войсы', href: '#', imgSrc: '../img/s1.svg' },
+        { text: 'Список', href: '#', imgSrc: '../img/s1.svg' }
     ];
 
     // Создаем ссылки
@@ -58,13 +70,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Вставляем header в начало body
     document.body.insertBefore(header, document.body.firstChild);
-})
-
-
-const burgerMenu = document.getElementById('burger-menu');
-const navMenu = document.getElementById('nav-menu');
-
-burgerMenu.addEventListener('click', () => {
-    burgerMenu.classList.toggle('active');
-    navMenu.classList.toggle('active');
 });
