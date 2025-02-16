@@ -7,95 +7,138 @@
     <title>Зимний Лес</title>
     <style>
 
-        @media (max-width: 500px){
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки */
+        gap: 100px; /* Промежуток между элементами */
+        z-index: 6;
+        justify-items: center; /* Центрирование элементов внутри сетки */
+        justify-content: center; /* Центрирование всего контейнера */
+        z-index: 50;
+    }
 
-            .mainPng {
-                display: none;
+    .content {
+        padding: 15px;
+        border-radius: 8px;
+        text-align: center;
+        z-index: 50;
+
+        
+    }
+
+    .white, .black {
+        background-color: #01070F45; 
+        margin: auto;
+        padding: 40px;
+    }
+
+    /* Фон для белых и черных элементов */
+    .white {
+        width: 500px;
+
+    }
+
+    .black {
+        width: 300px;
+        
+
+    }
+
+    .white img, .black img {
+        max-height: 200px;
+
+    }
+
+
+    /* Стили для изображений */
+    .phone-del {
+        width: 100%; /* Изображения занимают всю ширину ячейки */
+        border-radius: 8px;
+    }
+
+
+        @media (max-width: 500px){
+            main {
+                width: 90%;
+                margin-top: 20%;
             }
 
             .grid-container {
-                display: inline;
-                margin: auto;
-                margin-top: 5%;
-                padding: 0;
+
+                display: grid; /* Убедитесь, что это grid */
+                grid-template-columns: 1fr; /* Одна колонка на маленьких экранах */
+                margin: 0;
+
+                gap: 0;
 
             }
 
             .content {
-                margin: 3px 3px 10% 3px;
-                
-
+                width: 70%; /* Убедитесь, что контейнер не превышает ширину экрана */
+                padding: 10px;
+                margin-top: 10%;
+                max-height: 100vh;
             }
 
-            h2 {
-                font-size: larger;
+            .white img, .white, .black, .black img {
+                max-width: 380px;
             }
-
-            .phone{
-                display: block;
             }
-
-            .phone-del{
-                display: none;
-                
+            @media (max-width: 370px){
+                .content {
+                max-width: 320px;
+                margin-bottom: 10%;
+                max-height: 100vh;
             }
-
             }
-
     </style>
 </head>
 <body>
 
 
-
+<main>
     <div class="grid-container">
-        <div class="content">
-            <h2>Добро пожаловать в зимний лес!</h2>
-            <p>Здесь вы сможете насладиться красотой природы в её зимнем обличии. Погрузитесь в атмосферу тишины и спокойствия.</p>
-            <p>Не забудьте обратить внимание на <span class="highlight">алые акценты</span>, которые добавляют яркости и контраста в этот холодный мир.</p>
-            <img class="phone" src="https://source.unsplash.com/600x400/?winter-forest" alt="Зимний лес">
-            
-        </div>
-        <img class="phone-del" src="https://source.unsplash.com/600x400/?winter-forest" alt="Зимний лес">
+    <div class="content white">
+        <img class="phone-del" src="../bg.png" alt="Заледеневшее море">
 
-
-        <img class="phone-del" src="https://source.unsplash.com/600x400/?icy-sea" alt="Заледеневшее море">
-
-        <div class="content">
-            <h2>Заледеневшее море</h2>
-            <p>Заледеневшее море — это невероятное зрелище, где ледяные блоки создают уникальные формы и текстуры.</p>
-            <p>Наблюдение за этим пейзажем может быть вдохновляющим и умиротворяющим.</p>
-            <img class="phone" src="https://source.unsplash.com/600x400/?icy-sea" alt="Заледеневшее море">
-        </div>
-
-
-
-        <div class="content">
-            <h2>Снежные пейзажи</h2>
-            <p>Снежные пейзажи завораживают своей красотой и спокойствием. Каждый шаг по свежему снегу — это настоящее удовольствие.</p>
-            <p>Погрузитесь в мир зимней сказки и насладитесь каждым моментом.</p>
-            <img class="phone" src="https://source.unsplash.com/600x400/?snow-landscape" alt="Снежный пейзаж">
-
-        </div>
-        <img class="phone-del" src="https://source.unsplash.com/600x400/?snow-landscape" alt="Снежный пейзаж">
-
-
-        
-        <img class="phone-del" src="https://source.unsplash.com/600x400/?frozen-lake" alt="Замёрзшее озеро">
-        <div class="content">
-            <h2>Замёрзшее озеро</h2>
-            <p>Замёрзшие озёра создают удивительные пейзажи и предлагают уникальные возможности для отдыха и развлечений.</p>
-            <p>Здесь можно покататься на коньках или просто насладиться красотой окружающей природы.</p>
-            <img class="phone" src="https://source.unsplash.com/600x400/?frozen-lake" alt="Замёрзшее озеро">
-
-        </div>
     </div>
+    <div class="content black">
+        <img class="phone-del" src="../bg.png" alt="Зимний лес">
+    </div>
+
+    <div class="content black">
+        <img class="phone-del" src="../bg.png" alt="Заледеневшее море">
+    </div>
+    <div class="content white">
+        <img class="phone-del" src="../bg.png" alt="Заледеневшее море">
+
+    </div>
+
+    <div class="content white">
+        <img class="phone-del" src="../bg.png" alt="Заледеневшее море">
+
+    </div>
+    <div class="content black">
+        <img class="phone-del" src="../bg.png" alt="Заледеневшее море">
+
+    </div>
+
+    <div class="content black">
+        <img class="phone-del" src="../bg.png" alt="Заледеневшее море">
+
+    </div>
+    <div class="content white">
+        <img class="phone-del" src="../bg.png" alt="Заледеневшее море">
+
+    </div>
+</div>
+
 
     <div class="mainPng">
         <div class="left"></div>
         <div class="right"></div>
     </div>
-
+</main>
     <script src="../js/header.js"></script>
   </body>
 
