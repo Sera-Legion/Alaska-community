@@ -140,6 +140,15 @@
     </div>
 </main>
     <script src="../js/header.js"></script>
+    <script>
+        const cards = document.querySelectorAll('.card'); // Получаем все карточки
+
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                card.classList.toggle('flipped'); // Переключаем класс flipped для каждой карточки
+            });
+        });
+    </script>
   </body>
 
 </html>
