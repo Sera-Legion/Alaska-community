@@ -82,16 +82,19 @@
         </div>
     
         <nav id="nav-menu">
+            <a href="index.html"><img class="sticker" src="img/s1.png">home</a>
             <a href="pages/mem.html"><img class="sticker" src="img/s1.png">Мемы</a>
             <a href="#"><img class="sticker" src="img/s1.png">Пасты</a>
             <a href="#"><img class="sticker" src="img/s1.png">Видево</a>
             <a href="#"><img class="sticker" src="img/s1.png">Гифки</a>
             <a href="#"><img class="sticker" src="img/s1.png">Войсы</a>
             <a href="#"><img class="sticker" src="img/s1.png">Список</a>
+            <a href="#"><img class="sticker" src="img/s1.png">logo</a>
         </nav>
     
     
     </header>
+    <div id="hvost"></div>
 
     <div class="grid-container">
         <div class="content">
@@ -139,6 +142,13 @@
         <div class="left"></div>
         <div class="right"></div>
     </div>
+    
+    <footer>
+        <p>©️ 2025 Права что-то там защищены.<br> 
+    Ссылка на страницу создателей<br>
+    <a href="#">(^///^)</a></p>
+        
+    </footer>
 
     <script>
 const burgerMenu = document.getElementById('burger-menu');
@@ -162,6 +172,44 @@ burgerMenu.addEventListener('click', () => {
     }
 });
 
+// ХВОСТ УПИРАЕТСЯ В ХЕДЕР
+document.addEventListener('DOMContentLoaded', function() {
+    const hvost = document.getElementById('hvost');
+    const header = document.querySelector('header');
+    const scrollLimit = 200; // Максимальное значение прокрутки
+
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+
+        // Проверяем, находится ли прокрутка в пределах установленного предела
+        if (header.style.position !== "fixed") {
+            if (scrollY <= scrollLimit) {
+                // Рассчитываем новое значение top для элемента #hvost
+                let newTop = Math.max(0, 7 - (scrollY / scrollLimit) * 7);
+                hvost.style.top = newTop + '%';
+            } else {
+                // Если прокрутка превышает предел, фиксируем элемент на 0%
+                hvost.style.top = '0%';
+            }
+        }
+    });
+});
+
+document.getElementById('hvost').onclick = function(){
+    const hvost = document.getElementById('hvost');
+    const header = document.querySelector('header');
+
+    if (header.style.position === "absolute" || header.style.position === "") {
+        header.style.position = "fixed";
+        hvost.style.top = "7%"; // Устанавливаем позицию хвоста под хедером
+    } else {
+        header.style.position = "absolute";
+        hvost.style.top = "0"; // Устанавливаем хвост на верх
+    }
+
+};
+
     </script>
   </body>
+
 </html>
