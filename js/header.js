@@ -45,12 +45,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Массив ссылок с изображениями
     const links = [
+        { text: 'home', href: '../index.html', imgSrc: '../img/s1.png' },
         { text: 'Мемы', href: '../pages/mem.html', imgSrc: '../img/s1.png' },
         { text: 'Пасты', href: '#', imgSrc: '../img/s1.png' },
         { text: 'Видево', href: '#', imgSrc: '../img/s1.png' },
         { text: 'Гифки', href: '#', imgSrc: '../img/s1.png' },
         { text: 'Войсы', href: '#', imgSrc: '../img/s1.png' },
-        { text: 'Список', href: '#', imgSrc: '../img/s1.png' }
+        { text: 'Список', href: '#', imgSrc: '../img/s1.png' },
+        { text: 'logo', href: '№', imgSrc: '../img/s1.png' }
+
     ];
 
     // Создаем ссылки
@@ -70,4 +73,52 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Вставляем header в начало body
     document.body.insertBefore(header, document.body.firstChild);
+
 });
+
+
+// ХВОСТ УПИРАЕТСЯ В ХЕДЕР
+document.addEventListener('DOMContentLoaded', function() {
+    const hvost = document.getElementById('hvost');
+    const header = document.querySelector('header');
+    const scrollLimit = 200; // Максимальное значение прокрутки
+
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+
+        // Проверяем, находится ли прокрутка в пределах установленного предела
+        if (header.style.position !== "fixed") {
+            if (scrollY <= scrollLimit) {
+                // Рассчитываем новое значение top для элемента #hvost
+                let newTop = Math.max(0, 7 - (scrollY / scrollLimit) * 7);
+                hvost.style.top = newTop + '%';
+            } else {
+                // Если прокрутка превышает предел, фиксируем элемент на 0%
+                hvost.style.top = '0%';
+            }
+        }
+    });
+});
+
+// КАРТАВРАЩАТЕЛЬНЫЙ МЕХАНИЗМ
+const cards = document.querySelectorAll('.card'); // Получаем все карточки
+
+cards.forEach(card => {
+    card.addEventListener('click', () => {
+        card.classList.toggle('flipped'); // Переключаем класс flipped для каждой карточки
+    });
+});
+
+document.getElementById('hvost').onclick = function(){
+    const hvost = document.getElementById('hvost');
+    const header = document.querySelector('header');
+
+    if (header.style.position === "absolute" || header.style.position === "") {
+        header.style.position = "fixed";
+        hvost.style.top = "7%"; // Устанавливаем позицию хвоста под хедером
+    } else {
+        header.style.position = "absolute";
+        hvost.style.top = "0"; // Устанавливаем хвост на верх
+    }
+
+};
