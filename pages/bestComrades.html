@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Благодарности</title>
+    <style>
+       body {
+    font-family: Arial, sans-serif;
+    background-color: #18181b; /* Темный фон, как у Twitch */
+    color: white; /* Белый цвет текста для контраста */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрируем элементы по горизонтали */
+}
+
+h1 {
+    text-align: center; /* Центрируем заголовок */
+    margin-bottom: 20px; /* Отступ снизу для заголовка */
+}
+
+.frame {
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px 0;
+    background-color: #29292e; /* Темный фон для рамочек */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s; /* Плавный переход */
+    opacity: 0; /* Скрываем элементы изначально */
+    transform: translateY(20px); /* Сдвигаем вниз для анимации */
+    width: 80%; /* Ширина рамок */
+    max-width: 600px; /* Максимальная ширина рамок */
+}
+
+.alaska {
+    border: 5px solid silver; /* Серебряный цвет */
+}
+
+.alaska h2 {
+    color: silver; /* Заголовок в серебряном цвете */
+}
+
+.sera {
+    border: 5px solid gold; /* Золотой цвет */
+}
+
+.sera h2 {
+    color: gold; /* Заголовок в золотом цвете */
+}
+
+.frankishi {
+    border: 5px solid rgb(243, 74, 220); /* Розовый цвет */
+}
+
+.frankishi h2 {
+    color: rgb(243, 74, 220); /* Заголовок в розовом цвете */
+}
+
+.chatters {
+    border: 5px solid #9146FF; /* Фиолетовый цвет Twitch */
+}
+
+.chatters h2 {
+    color: #9146FF; /* Заголовок в фиолетовом цвете */
+}
+
+.team {
+    border: 5px solid green; /* Зеленый цвет */
+}
+
+.team h2 {
+    color: green; /* Заголовок в зеленом цвете */
+}
+
+.bjorn {
+    border: 5px solid #7b1fa2; /* Другой оттенок фиолетового */
+}
+
+.bjorn h2 {
+    color: #7b1fa2; /* Заголовок в другом оттенке фиолетового */
+}
+
+.fluffy {
+    border: 5px solid orange; /* Оранжевый цвет */
+}
+
+.fluffy h2 {
+    color: orange; /* Заголовок в оранжевом цвете */
+}
+        .frame {
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px 0;
+    background-color: #29292e; /* Темный фон для рамочек */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s; /* Плавный переход */
+    opacity: 0; /* Скрываем элементы изначально */
+    transform: translateY(20px); /* Сдвигаем вниз для анимации */
+}
+    </style>
+</head>
+<body>
+
+    <h1>Благодарности</h1>
+
+    <div class="frame alaska">
+        <h2>AlaskaNyan</h2>
+        <p>Главный руководитель проекта и начальник бюро контроля качества. Наш любимый стример и самая лучшая!</p>
+    </div>
+
+    <div class="frame sera">
+        <h2>Sera_nyan_legion</h2>
+        <p>Главный инициатор и технический контролер проекта, ответственный за кодировку.</p>
+    </div>
+
+    <div class="frame frankishi">
+        <h2>ЧВК «frankishi»</h2>
+        <p>Главный поставщик материалов, создатель множества мемов и контента.</p>
+    </div>
+
+    <div class="frame chatters">
+        <h2>Чаттерсы</h2>
+        <p>Все, кто помогали собирать материал; ваша поддержка была неоценима!</p>
+    </div>
+
+    <div class="frame team">
+        <h2>«Отряд берегов Аляски»</h2>
+        <p>Предоставление разнообразной помощи, от материалов до технической поддержки.</p>
+    </div>
+
+    <div class="frame bjorn">
+        <h2>Sigurnbiern</h2>
+        <p>Разработка дизайна сайта, превративший идеи в визуальные формы.</p>
+    </div>
+
+    <div class="frame fluffy">
+        <h2>FluffyOzenNyan</h2>
+        <p>За работу с отчетами, даже если вклад был незначительным (я так не считаю).</p>
+    </div>
+
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const frames = document.querySelectorAll('.frame');
+    
+    frames.forEach((frame, index) => {
+        // Задержка для анимации появления
+        setTimeout(() => {
+            frame.style.opacity = 1; // Делаем элемент видимым
+            frame.style.transform = 'translateY(0)'; // Возвращаем элемент на место
+        }, index * 300); // Задержка 300 мс между элементами
+    });
+});
+
+    </script>
+</body>
+</html>
+
+
