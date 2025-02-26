@@ -11,30 +11,20 @@ document.addEventListener('DOMContentLoaded', function() {
     menuDiv.className = 'menu';
     menuDiv.id = 'burger-menu';
 
+    const hvostPP = document.createElement('div');
+    hvostPP.id = 'hvost-phone';
+    menuDiv.appendChild(hvostPP);
+
+
     // Создаем полосы для бургер-меню
     const zazakladka = document.createElement('div');
     zazakladka.className = "zakladka";
     zazakladka.id = "zad";
     menuDiv.appendChild(zazakladka);
 
+
     // Добавляем обработчик клика на меню
-    menuDiv.addEventListener('click', function() {
-        const nav = document.getElementById('nav-menu');
-        nav.classList.toggle('active'); // Добавьте/удалите класс для показа/скрытия меню
 
-        // Здесь добавляем логику изменения цвета границы
-        const zakladka = document.getElementById('zad');
-        const originalBorderColor = "rgba(1, 7, 15, 0.7) rgba(1, 7, 15, 0.7) transparent";
-
-        // Проверяем текущий цвет границы и переключаем его
-        if (zakladka.style.borderColor === "rgba(1, 7, 15, 0) rgba(1, 7, 15, 0) transparent") {
-            // Если текущий цвет границы соответствует заданному, меняем его обратно
-            zakladka.style.borderColor = originalBorderColor; // Установите исходный цвет границы
-        } else {
-            // В противном случае меняем цвет границы на заданный
-            zakladka.style.borderColor = "rgba(1, 7, 15, 0) rgba(1, 7, 15, 0) transparent";
-        }
-    });
 
     // Добавляем div меню в header
     header.appendChild(menuDiv);
@@ -79,6 +69,41 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // ХВОСТ УПИРАЕТСЯ В ХЕДЕР
 document.addEventListener('DOMContentLoaded', function() {
+
+
+    // Добавляем обработчик клика на меню
+    const burgerMenu = document.getElementById('burger-menu');
+    const navMenu = document.getElementById('nav-menu');
+    const zakladka = document.getElementById('zad');
+    
+    // Исходный цвет границы
+    const originalBorderColor = "#48257cb4 #48257cb4 transparent";
+    
+    document.getElementById('hvost-phone').onclick = function(){
+        const hvostP = document.getElementById('hvost-phone');
+        burgerMenu.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        const currentTop = window.getComputedStyle(hvostP).top;
+        if (currentTop === "1px"){
+            hvostP.style.top = "350px";
+    
+        } else{
+            hvostP.style.top = "1px";
+        }
+    
+        // Проверяем текущий цвет границы и переключаем его
+        if (zakladka.style.borderColor === "rgba(1, 7, 15, 0) rgba(1, 7, 15, 0) transparent") {
+            // Если текущий цвет границы соответствует заданному, меняем его обратно
+            zakladka.style.borderColor = originalBorderColor; // Установите исходный цвет границы
+        } else {
+            // В противном случае меняем цвет границы на заданный
+            zakladka.style.borderColor = "rgba(1, 7, 15, 0) rgba(1, 7, 15, 0) transparent";
+        }
+    
+    
+    };
+
+
     const hvost = document.getElementById('hvost');
     const header = document.querySelector('header');
     const scrollLimit = 200; // Максимальное значение прокрутки
