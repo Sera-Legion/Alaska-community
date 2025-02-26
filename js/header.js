@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-// ХВОСТ УПИРАЕТСЯ В ХЕДЕР
+// ДРУГАЯ ФИГУРА + ХВОСТ УПИРАЕТСЯ В ХЕДЕР
 document.addEventListener('DOMContentLoaded', function() {
 
 
