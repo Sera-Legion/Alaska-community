@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { text: 'Гифки', href: '#', imgSrc: '../img/s1.png' },
         { text: 'Войсы', href: '#', imgSrc: '../img/s1.png' },
         { text: 'Список', href: '#', imgSrc: '../img/s1.png' },
-        { text: 'logo', href: '№', imgSrc: '../img/s1.png' }
+        { text: 'logo', href: '#', imgSrc: '../img/s1.png' }
 
     ];
 
@@ -75,32 +75,39 @@ document.addEventListener('DOMContentLoaded', function() {
     const burgerMenu = document.getElementById('burger-menu');
     const navMenu = document.getElementById('nav-menu');
     const zakladka = document.getElementById('zad');
+
+
     
     // Исходный цвет границы
-    const originalBorderColor = "#48257cb4 #48257cb4 transparent";
+    const originalBg = "#48257cb4";
     
     document.getElementById('hvost-phone').onclick = function(){
         const hvostP = document.getElementById('hvost-phone');
+
         burgerMenu.classList.toggle('active');
+
         navMenu.classList.toggle('active');
+
         const currentTop = window.getComputedStyle(hvostP).top;
-        if (currentTop === "1px"){
+
+        if (currentTop === "30px"){
             hvostP.style.top = "350px";
     
         } else{
-            hvostP.style.top = "1px";
+            hvostP.style.top = "30px";
         }
     
         // Проверяем текущий цвет границы и переключаем его
-        if (zakladka.style.borderColor === "rgba(1, 7, 15, 0) rgba(1, 7, 15, 0) transparent") {
+        if (zakladka.style.background === "rgba(1, 7, 15, 0)") {
             // Если текущий цвет границы соответствует заданному, меняем его обратно
-            zakladka.style.borderColor = originalBorderColor; // Установите исходный цвет границы
+            zakladka.style.background = originalBg; // Установите исходный цвет границы
+            zakladka.classList.add("zakladka");
+
         } else {
             // В противном случае меняем цвет границы на заданный
-            zakladka.style.borderColor = "rgba(1, 7, 15, 0) rgba(1, 7, 15, 0) transparent";
+            zakladka.style.background = "rgba(1, 7, 15, 0)";
+            zakladka.classList.remove("zakladka");
         }
-    
-    
     };
 
 
