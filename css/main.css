@@ -164,8 +164,24 @@ footer p a {
 
 
 @media (max-width: 700px) {
+
+    #hvost-phone {
+        background-image: url("../img/hvost.png");
+        height: 50px;
+        width: 50px;
+        position: fixed;
+        z-index: 100;
+        cursor: pointer;
+        position: absolute;
+        top: 1px;
+    }
+    
+    .text p {
+        font-size: 15px;
+    }
             
     #hvost {
+        width: 0;
         opacity: 0;
     }
 
@@ -188,7 +204,7 @@ footer p a {
         margin-left: 0;
         border-width: 35px 20px 15px;
         border-style: solid;
-        border-color: rgba(1, 7, 15, 0.7) rgba(1, 7, 15, 0.7) transparent;
+        border-color: #48257cb4 #48257cb4 transparent;
         background-color: #00000000;
         transform: translateY(-20%); /* Поднимаем на половину высоты */
         margin-left: 10px;
@@ -226,7 +242,7 @@ footer p a {
         height: 0; 
         border-width: 550px 20px 15px;
         border-style: solid;
-        border-color: rgba(1, 7, 15, 0.9) rgba(1, 7, 15, 0.9) transparent;
+        border-color: #48257cb4 #48257cb4 transparent;
         background-color: #ff000000;
         transform: translateY(-50%); /* Поднимаем на половину высоты */
 
@@ -277,7 +293,14 @@ footer p a {
         height: 0;
     }
 
+    nav a:nth-child(8) .stiker  {
+        max-width: 0;
+        max-height: 0;
+    }
+
     .mainPng {
         display: none;
     }
+
+
 }
