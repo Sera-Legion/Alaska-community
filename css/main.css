@@ -84,7 +84,7 @@ nav a:hover {
 
 #hvost {
     background-image: url("../img/hvost.png");
-    height: 50px;
+    height: 55px;
     width: 50px;
     position: fixed;
     z-index: 100;
@@ -167,7 +167,7 @@ footer p a {
 
     #hvost-phone {
         background-image: url("../img/hvost.png");
-        height: 50px;
+        height: 55px;
         width: 50px;
         position: fixed;
         z-index: 100;
