@@ -84,8 +84,8 @@ nav a:hover {
 
 #hvost {
     background-image: url("../img/hvost.png");
-    height: 50px;
-    width: 55px;
+    height: 55px;
+    width: 50px;
     position: fixed;
     z-index: 100;
     top: 7%;
