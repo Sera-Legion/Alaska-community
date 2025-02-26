@@ -79,6 +79,8 @@
     <header>
         <div class="menu" id="burger-menu">
             <div class="zakladka" id="zad"></div>
+            <div id="hvost-phone"></div>
+
         </div>
     
         <nav id="nav-menu">
@@ -94,7 +96,7 @@
     
     
     </header>
-    <div id="hvost"></div>
+        <div id="hvost"></div>
 
     <div class="grid-container">
         <div class="content">
@@ -146,7 +148,7 @@
     <footer>
         <p>©️ 2025 Права что-то там защищены.<br> 
     Ссылка на страницу создателей<br>
-    <a href="pages/bestComrades.html">(^///^)</a></p>
+    <a href="#">(^///^)</a></p>
         
     </footer>
 
@@ -156,11 +158,19 @@ const navMenu = document.getElementById('nav-menu');
 const zakladka = document.getElementById('zad');
 
 // Исходный цвет границы
-const originalBorderColor = "rgba(1, 7, 15, 0.7) rgba(1, 7, 15, 0.7) transparent";
+const originalBorderColor = "#48257cb4 #48257cb4 transparent";
 
-burgerMenu.addEventListener('click', () => {
+document.getElementById('hvost-phone').onclick = function(){
+    const hvostP = document.getElementById('hvost-phone');
     burgerMenu.classList.toggle('active');
     navMenu.classList.toggle('active');
+    const currentTop = window.getComputedStyle(hvostP).top;
+    if (currentTop === "1px"){
+        hvostP.style.top = "350px";
+
+    } else{
+        hvostP.style.top = "1px";
+    }
 
     // Проверяем текущий цвет границы и переключаем его
     if (zakladka.style.borderColor === "rgba(1, 7, 15, 0) rgba(1, 7, 15, 0) transparent") {
@@ -170,7 +180,9 @@ burgerMenu.addEventListener('click', () => {
         // В противном случае меняем цвет границы на заданный
         zakladka.style.borderColor = "rgba(1, 7, 15, 0) rgba(1, 7, 15, 0) transparent";
     }
-});
+
+
+};
 
 // ХВОСТ УПИРАЕТСЯ В ХЕДЕР
 document.addEventListener('DOMContentLoaded', function() {
@@ -208,6 +220,7 @@ document.getElementById('hvost').onclick = function(){
     }
 
 };
+
 
     </script>
   </body>
