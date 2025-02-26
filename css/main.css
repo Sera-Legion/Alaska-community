@@ -314,9 +314,8 @@ footer p a {
         position: absolute;
     }
 
-    .mainPng {
+    .mainPng .right {
         display: none;
     }
-
 
 }
