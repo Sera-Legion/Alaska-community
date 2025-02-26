@@ -247,6 +247,11 @@ footer p a {
         transform: translateY(-50%); /* Поднимаем на половину высоты */
 
     }
+
+    nav a:hover {
+        background-color: #00000000; 
+    }
+    
     nav a {
         color: rgba(255, 255, 255, 0);
         text-decoration: none;
