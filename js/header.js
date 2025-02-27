@@ -39,7 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
         { text: 'Мемы', href: '../pages/mem.html', imgSrc: '../img/s1.png' },
         { text: 'Пасты', href: '#', imgSrc: '../img/s1.png' },
         { text: 'Видево', href: '#', imgSrc: '../img/s1.png' },
-        { text: 'Гифки', href: '#', imgSrc: '../img/s1.png' },
         { text: 'Войсы', href: '#', imgSrc: '../img/s1.png' },
         { text: 'Список', href: '#', imgSrc: '../img/s1.png' },
         { text: 'logo', href: '#', imgSrc: '../img/s1.png' }
