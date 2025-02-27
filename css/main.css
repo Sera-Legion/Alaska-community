@@ -94,41 +94,7 @@ nav a:hover {
     cursor: pointer;
 }
 
-.mainPng {
-    display: flex;
-    justify-content: space-between; /* Распределяем изображения по бокам */
-    position: fixed; /* Абсолютное позиционирование */
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1; /* Убедитесь, что изображения ниже кнопок */
-}
 
-
-
-.left, .right {
-
-    z-index: 0;
-    background-size: cover; /* Заполнение фона */
-    background-position: center; /* Центрируем изображение */
-}
-
-.right {
-    
-    width: 500px;
-    height: 250px;
-    transform: translateX(-80%) translateY(110%);
-    background-image: url('../img/auto.webp'); /* Убедитесь, что это правильный путь к вашему изображению */
-
-}
-
-.left {
-    background-image: url('../img/clown-1.webp'); /* Убедитесь, что это правильный путь к вашему изображению */
-    min-width: 900px;
-    min-height: 900px;
-    padding-left: 20%;
-
-}
 
 .grid-container {
     z-index: 2;
