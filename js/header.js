@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { text: 'Пасты', href: '#', imgSrc: '../img/s1.png' },
         { text: 'Видево', href: '#', imgSrc: '../img/s1.png' },
         { text: 'НЕГИФ', href: '#', imgSrc: '../img/s1.png' },
-        { text: 'Войсы', href: '#', imgSrc: '../img/s1.png' },
+        { text: 'Войсы', href: '../pages/voice.html', imgSrc: '../img/s1.png' },
         { text: 'Список', href: '#', imgSrc: '../img/s1.png' },
         { text: 'logo', href: '#', imgSrc: '../img/s1.png' }
 
