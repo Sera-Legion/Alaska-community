@@ -4,220 +4,175 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
-
-    <title>Зимний Лес</title>
+    <title>Сайт Аляски</title>
     <style>
+        body {
+            background-color: #18181b;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
 
-        h1 {
-            margin: 0;
-            font-size: 2.5em;
         }
 
-        .grid-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            padding: 20px;
-            max-width: 1200px;
-            width: 100%;            
-        }
-
-        .content {
-            background-color: #01070F45; /* ФОООООООНФ */
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            color: #fff;
-        }
-
-        .highlight {
-            color: #ff4500; /* Алый цвет для акцентов */
-            font-weight: bold;
-        }
-
-        .phone {
-            display: none;
-        }
-
-        .mainPng {
+        main {
+   
+            margin-top: 10%;
             display: flex;
-            position: fixed;
-            bottom: 0;
-            top: 0;
-            right: 0;
-            justify-content: space-between;
-            padding: 0;
-            left: 0;
+            justify-content: center;
         }
 
-        .left, .right, .centre {
-            background-size: cover; /* Заполнение фона */
-            background-position: center; /* Центрируем изображение */
-            background-repeat: no-repeat;
-            background-size: 100% auto;
-            padding-top: 30%;
-
+        .container {
+            max-width: 800px;
+            width: 100%;
         }
-        
-        .left {
-            background-image: url("img/l.webp");
-            padding: 0;
-            min-width: 500px;
-            min-height: 750px;
-            padding-top: 30%;
-            scale: 0.8;
-
+        h1 {
+            color: #9146ff;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
         }
-        .centre {
-            background-image: url("img/auto.webp");
-            min-width: 400px;
-            min-height: 300px;
-            
-            
+        h2 {
+            color: #9146ff;
+            font-size: 2em;
+            margin: 20px 0 10px;
+            text-align: center;
         }
-        .right {
-            background-image: url("img/r.webp");
-            min-width: 500px;
-            min-height: 750px;
+        p {
+            line-height: 1.6;
+            font-size: 1.1em;
+            margin-bottom: 20px;
         }
-        
-        @media (min-width: 2000px) {
-            .mainPng {
-                padding-top: 7%;
-            }
-
-            .left {
-            min-width: 700px;
-            min-height: 850px;
-            transform: translateY(-10%); /* Поднимаем на половину высоты */
-
-
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #23272a;
         }
-        .centre {
-            min-width: 400px;
-            min-height: 300px;
-            
-            
+        .platforms {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
         }
-        .right {
-            min-width: 600px;
-            min-height: 850px;
-            transform: translateY(-10%); /* Поднимаем на половину высоты */
+        .platform {
+            background-color: #2c2f33;
+            border: 2px solid #9146ff;
+            border-radius: 8px;
+            padding: 15px;
+            flex: 1 1 200px;
+            text-align: center;
+            transition: transform 0.3s;
         }
+        .platform:hover {
+            transform: scale(1.05);
         }
-
-        @media (min-width: 2500px) {
-            .mainPng {
-                padding-top: 15%;
-            }
-            
+        .platform a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .platform a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #b9bbbe;
         }
 
-        @media (max-width: 1400px) {
-            .left {
+        .custom-list {
+              list-style-type: none; /* Убираем стандартные маркеры */
+              padding: 0; /* Убираем отступы */
+          }
 
-            min-width: 450px;
-            min-height: 750px;
-            padding-top: 30%;
-            scale: 0.7;
-            padding-top: 15%;
+          .custom-list li {
+              position: relative; /* Для позиционирования псевдоэлемента */
+              padding-left: 30px; /* Увеличиваем отступ для текста */
+              line-height: 1.5; /* Устанавливаем высоту строки для лучшего выравнивания */
+          }
 
-        }
-        .centre {
-            min-width: 300px;
-            min-height: 300px;
-            scale: 0.8;
-            
-            
-        }
-        .right {
-            min-width: 500px;
-            min-height: 750px;
-            scale: 0.7;
-            padding-top: 15%;
+          .custom-list li::before {
+              content: '✦'; /* Знак звезды */
+              color: gold; /* Цвет маркера */
+              position: absolute; /* Абсолютное позиционирование */
+              left: 0; /* Позиция маркера */
+              top: -10px; /* Выравнивание по верхнему краю */
+              margin-top: 2px; /* Небольшой отступ сверху для выравнивания */
+              font-size: 1.5em; /* Размер маркера */
+          }
 
-        }
-        }
 
-        @media (max-width: 1200px) {
-            .left {
 
-            min-width: 400px;
-            min-height: 750px;
-            padding-top: 30%;
-            padding-top: 15%;
-
-        }
-        .centre {
-            min-width: 300px;
-            min-height: 300px;
-            scale: 0.8;
-            
-            
-        }
-        .right {
-            min-width: 400px;
-            min-height: 750px;
-
-        }
+        .divider {
+            display: flex; /* Используем flexbox для выравнивания */
+            align-items: center; /* Центрируем по вертикали */
+            position: relative; /* Для позиционирования символа */
+            width: 100%; /* Ширина строки увеличена */
         }
 
+        .line {
+            flex-grow: 1; /* Линия растягивается на оставшееся пространство */
+            height: 2px; /* Высота линии */
+            background-color: #9046ff00; /* Цвет линии */
+            margin: 0; /* Убираем отступы между линией и символом */
+        }
+      
 
-        @media (max-width: 700px) {
-
-
-
-            .grid-container {
-                display: inline;
-                width: 90%;
-                margin-left: 7%;
-                padding: 0;
-                margin-top: 25%;
-                z-index: 100;
-            }
-
-            .content {
-                margin: 3px 3px 10% 3px;
-                
-
-            }
-
-            h2 {
-                font-size: larger;
-            }
-
-            .phone{
-                display: block;
-            }
-
-            .phone-del{
-                display: none;
-                
-            }
-
-            .right {
-                display: none;
-            }
-            .centre {
-                display: none;
-            }
+        .diamond {
+            position: absolute; /* Абсолютное позиционирование для наложения */
+            left: 50%; /* Центрируем символ по горизонтали */
+            transform: translate(-50%, -50%); /* Центрируем по горизонтали и немного поднимаем по вертикали */
+            color: gold; /* Цвет символа ромба */
+            font-size: 30px; /* Размер шрифта для символа */
+            z-index: 1; /* Устанавливаем порядок наложения */
+            top: 0; /* Устанавливаем на уровень линии */
         }
 
+        .divider2 {
+            display: flex; /* Используем flexbox для выравнивания */
+            align-items: center; /* Центрируем по вертикали */
+            position: relative; /* Для позиционирования символа */
+            width: 100%; /* Ширина строки увеличена */
+            top: -40px;
+        }
+
+        .line2 {
+            flex-grow: 1; /* Линия растягивается на оставшееся пространство */
+            height: 2px; /* Высота линии */
+            background-color: #9046ff00; /* Цвет линии */
+            margin: 0; /* Убираем отступы между линией и символом */
+            top: -40px;
+        }
+
+        .diamond2 {
+            position: absolute; /* Абсолютное позиционирование для наложения */
+            left: 50%; /* Центрируем символ по горизонтали */
+            transform: translate(-50%, -50%); /* Центрируем по горизонтали и немного поднимаем по вертикали */
+            color: gold; /* Цвет символа ромба */
+            font-size: 30px; /* Размер шрифта для символа */
+            z-index: 1; /* Устанавливаем порядок наложения */
+            top: 0; /* Устанавливаем на уровень линии */
+            top: -1px;
+        }
+
+        .section {
+            border: 2px solid #9146ff;
+        }
     </style>
 </head>
 <body>
+
     <header>
         <div class="menu" id="burger-menu">
             <div class="zakladka" id="zad"></div>
             <div id="hvost-phone"></div>
 
         </div>
-    <main></main>
     
         <nav id="nav-menu">
             <a href="index.html"><img class="sticker" src="img/s1.png">home</a>
             <a href="pages/mem.html"><img class="sticker" src="img/s1.png">Мемы</a>
-            <a href="pages/paste.html"><img class="sticker" src="img/s1.png">Пасты</a>
+            <a href="#"><img class="sticker" src="img/s1.png">Пасты</a>
             <a href="pages/video.html"><img class="sticker" src="img/s1.png">Видево</a>
             <a href="#"><img class="sticker" src="img/s1.png">НЕГИФ</a>
             <a href="pages/voice.html"><img class="sticker" src="img/s1.png">Войсы</a>
@@ -230,151 +185,181 @@
         <div id="hvost"></div>
     <main>
 
-    <div class="grid-container">
-        <div class="content">
-            <h2>Добро пожаловать в зимний лес!</h2>
-            <p>Здесь вы сможете насладиться красотой природы в её зимнем обличии. Погрузитесь в атмосферу тишины и спокойствия.</p>
-            <p>Не забудьте обратить внимание на <span class="highlight">алые акценты</span>, которые добавляют яркости и контраста в этот холодный мир.</p>
-            <img class="phone" src="https://source.unsplash.com/600x400/?winter-forest" alt="Зимний лес">
-            
-        </div>
-        <img class="phone-del" src="https://source.unsplash.com/600x400/?winter-forest" alt="Зимний лес">
+    <div class="container">
+        <h1>Добро пожаловать на главную страницу сайтика Аляски!</h1>
+        <h2>Хевоооу (♡˙︶˙♡) </h2>
+        <p>Я рада приветствовать вас на сайте комьюнити! Здесь вы найдете все самые смешные и запоминающиеся моменты из наших стримов, собранные в одном месте!</p>
 
-
-        <img class="phone-del" src="https://source.unsplash.com/600x400/?icy-sea" alt="Заледеневшее море">
-
-        <div class="content">
-            <h2>Заледеневшее море</h2>
-            <p>Заледеневшее море — это невероятное зрелище, где ледяные блоки создают уникальные формы и текстуры.</p>
-            <p>Наблюдение за этим пейзажем может быть вдохновляющим и умиротворяющим.</p>
-            <img class="phone" src="https://source.unsplash.com/600x400/?icy-sea" alt="Заледеневшее море">
+        <div class="divider">
+            <div class="line"></div>
+            <div class="diamond">✦</div> <!-- Символ ромба -->
+            <div class="line"></div>
         </div>
 
+        <div class="section">
+    <h2>Что вас ждет на сайте?</h2>
+    <p>На главной странице вы сможете легко перейти к различным разделам, где мы храним наши лучшие моменты ( ´ ▽ ` )</p>
+    <ul class="custom-list">
+        <li><strong>Мемы</strong>: Откройте нашу коллекцию мемов, созданных вами и мной!</li><br>
+        <li><strong>Пасты</strong>: Читайте и наслаждайтесь забавными пастами, которые стали частью нашего комьюнити.</li><br>
+        <li><strong>Видео</strong>: Все самые яркие и смешные моменты из стримов теперь доступны в одном месте. Смотрите, пересматривайте и наслаждайтесь!</li><br>
+        <li><strong>Гифки</strong>: Погружайтесь в нашу коллекцию гифок, которые передают атмосферу наших стримов и поднимают настроение! ^_^</li><br>
+        <li><strong>Войсы</strong>: Слушайте забавные моменты и фразы, которые были произнесены во время стримов!</li><br>
+        <li><strong>Списочек</strong>: Здесь вы найдете список всех чаттерсов, которые внесли огромный вклад в комьюнити!</li><br>
+    </ul>
 
-
-        <div class="content">
-            <h2>Снежные пейзажи</h2>
-            <p>Снежные пейзажи завораживают своей красотой и спокойствием. Каждый шаг по свежему снегу — это настоящее удовольствие.</p>
-            <p>Погрузитесь в мир зимней сказки и насладитесь каждым моментом.</p>
-            <img class="phone" src="https://source.unsplash.com/600x400/?snow-landscape" alt="Снежный пейзаж">
-
-        </div>
-        <img class="phone-del" src="https://source.unsplash.com/600x400/?snow-landscape" alt="Снежный пейзаж">
-
-
-        
-        <img class="phone-del" src="https://source.unsplash.com/600x400/?frozen-lake" alt="Замёрзшее озеро">
-        <div class="content">
-            <h2>Замёрзшее озеро</h2>
-            <p>Замёрзшие озёра создают удивительные пейзажи и предлагают уникальные возможности для отдыха и развлечений.</p>
-            <p>Здесь можно покататься на коньках или просто насладиться красотой окружающей природы.</p>
-            <img class="phone" src="https://source.unsplash.com/600x400/?frozen-lake" alt="Замёрзшее озеро">
-
-        </div>
     </div>
+    <div class="divider2">
+        <div class="line2"></div>
+        <div class="diamond2">♥</div> <!-- Символ ромба -->
+        <div class="line2"></div>
+</div>
+
+<div class="divider">
+    <div class="line"></div>
+    <div class="diamond">✦</div> <!-- Символ ромба -->
+    <div class="line"></div>
+</div>
+
+      <div class="section">
+          <h2>(нужен текст)</h2>
+          <div class="platforms">
+              <div class="platform">
+                  <a href="#">Twitch</a><br>
+                  Не знаю надо ли, но вдруг кто-то еще не подписан <br> <br> (•̀ᴗ•́)
+              </div>
+              <div class="platform">
+                  <a href="#">Telegram</a><br>
+                  Подписывайтесь на наш канал, чтобы получать актуальные новости и обновления!<br> (✿◠‿◠)
+              </div>
+              <div class="platform">
+                  <a href="#">Discord</a><br>
+                  Присоединяйтесь к нашему серверу, чтобы общаться с другими участниками комьюнити!<br> (づ｡◕‿‿◕｡)づ
+              </div>
+              <div class="platform">
+                  <a href="#">Boosty</a><br>
+                  Поддержите меня и получите доступ к эксклюзивному контенту! <br> (｡♥‿♥｡)
+              </div>
+              <div class="platform">
+                  <a href="#">YouTube</a><br>
+                  Смотрите самые лучшие нарезки! <br> (≧▽≦)
+              </div>
+              <div class="platform">
+                  <a href="#">YouTube VODs</a><br>
+                   Смотрите записи стримов! <br> (๑•̀ㅂ•́)و
+              </div>
+            <div class="platform">
+                <a href="#">VK</a><br>
+                 присоединяйтеся к нашему сообществк в ВК, там много интересного <br> ^///^
+            </div>
+            <div class="platform">
+                <a href="#">Steam</a><br>
+                 Мой стим <br> ♥_♥
+            </div>
+      </div>
+    </div>
+    <div class="divider2">
+        <div class="line2"></div>
+        <div class="diamond2">♥</div> <!-- Символ ромба -->
+        <div class="line2"></div>
+</div>
 </main>
-    <div class="mainPng">
-        <div class="left"></div>
-        <div class="centre"></div>
-        <div class="right"></div>
-    </div>
+<footer>
+    <p>©️ 2025 Права что-то там защищены.<br> 
+Ссылка на страницу создателей<br>
+<a href="#">(^///^)</a></p>
     
-    <footer>
-        <p>©️ 2025 Права что-то там защищены.<br> 
-    Ссылка на страницу создателей<br>
-    <a href="#">(^///^)</a></p>
-        
-    </footer>
+</footer>
 
-    <script>
+<script>
 // Добавляем обработчик клика на меню
-    const burgerMenu = document.getElementById('burger-menu');
-    const navMenu = document.getElementById('nav-menu');
-    const zakladka = document.getElementById('zad');
+const burgerMenu = document.getElementById('burger-menu');
+const navMenu = document.getElementById('nav-menu');
+const zakladka = document.getElementById('zad');
 
 
-    
-    // Исходный цвет границы
-    const originalBg = "#48257cb4";
-    
-    document.getElementById('hvost-phone').onclick = function(){
-        const hvostP = document.getElementById('hvost-phone');
 
-        burgerMenu.classList.toggle('active');
+// Исходный цвет границы
+const originalBg = "#48257cb4";
 
-        navMenu.classList.toggle('active');
+document.getElementById('hvost-phone').onclick = function(){
+    const hvostP = document.getElementById('hvost-phone');
 
-        const currentTop = window.getComputedStyle(hvostP).top;
+    burgerMenu.classList.toggle('active');
 
-        if (currentTop === "30px"){
-            hvostP.style.top = "350px";
-    
-        } else{
-            hvostP.style.top = "30px";
-        }
-    
-        // Проверяем текущий цвет границы и переключаем его
-        if (zakladka.style.background === "rgba(1, 7, 15, 0)") {
-            // Если текущий цвет границы соответствует заданному, меняем его обратно
-            zakladka.style.background = originalBg; // Установите исходный цвет границы
-            zakladka.classList.add("zakladka");
+    navMenu.classList.toggle('active');
 
-        } else {
-            // В противном случае меняем цвет границы на заданный
-            zakladka.style.background = "rgba(1, 7, 15, 0)";
-            zakladka.classList.remove("zakladka");
-        }
-    };
+    const currentTop = window.getComputedStyle(hvostP).top;
+
+    if (currentTop === "30px"){
+        hvostP.style.top = "350px";
+
+    } else{
+        hvostP.style.top = "30px";
+    }
+
+    // Проверяем текущий цвет границы и переключаем его
+    if (zakladka.style.background === "rgba(1, 7, 15, 0)") {
+        // Если текущий цвет границы соответствует заданному, меняем его обратно
+        zakladka.style.background = originalBg; // Установите исходный цвет границы
+        zakladka.classList.add("zakladka");
+
+    } else {
+        // В противном случае меняем цвет границы на заданный
+        zakladka.style.background = "rgba(1, 7, 15, 0)";
+        zakladka.classList.remove("zakladka");
+    }
+};
 
 // ХВОСТ УПИРАЕТСЯ В ХЕДЕР
 document.addEventListener('DOMContentLoaded', function() {
-    const hvost = document.getElementById('hvost');
-    const header = document.querySelector('header');
-    const scrollLimit = 200; // Максимальное значение прокрутки
+const hvost = document.getElementById('hvost');
+const header = document.querySelector('header');
+const scrollLimit = 200; // Максимальное значение прокрутки
 
-    window.addEventListener('scroll', () => {
-        const scrollY = window.scrollY;
+window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
 
-        // Проверяем, находится ли прокрутка в пределах установленного предела
-        if (header.style.position !== "fixed") {
-            if (scrollY <= scrollLimit) {
-                // Рассчитываем новое значение top для элемента #hvost
-                let newTop = Math.max(0, 7 - (scrollY / scrollLimit) * 7);
-                hvost.style.top = newTop + '%';
-            } else {
-                // Если прокрутка превышает предел, фиксируем элемент на 0%
-                hvost.style.top = '0%';
-            }
+    // Проверяем, находится ли прокрутка в пределах установленного предела
+    if (header.style.position !== "fixed") {
+        if (scrollY <= scrollLimit) {
+            // Рассчитываем новое значение top для элемента #hvost
+            let newTop = Math.max(0, 7 - (scrollY / scrollLimit) * 7);
+            hvost.style.top = newTop + '%';
+        } else {
+            // Если прокрутка превышает предел, фиксируем элемент на 0%
+            hvost.style.top = '0%';
         }
-    });
+    }
+});
 });
 
 document.getElementById('hvost').onclick = function(){
-    const hvost = document.getElementById('hvost');
-    const header = document.querySelector('header');
+const hvost = document.getElementById('hvost');
+const header = document.querySelector('header');
 
-    if (header.style.position === "absolute" || header.style.position === "") {
-        header.style.position = "fixed";
-        hvost.style.top = "7%"; // Устанавливаем позицию хвоста под хедером
-    } else {
-        header.style.position = "absolute";
-        hvost.style.top = "0"; // Устанавливаем хвост на верх
-    }
+if (header.style.position === "absolute" || header.style.position === "") {
+    header.style.position = "fixed";
+    hvost.style.top = "7%"; // Устанавливаем позицию хвоста под хедером
+} else {
+    header.style.position = "absolute";
+    hvost.style.top = "0"; // Устанавливаем хвост на верх
+}
 
 };
 
 // Отключение контекстного меню
 document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
+e.preventDefault();
 });
 
 // Запретить выделение текста
 document.addEventListener('selectstart', function(e) {
-    e.preventDefault();
+e.preventDefault();
 });
 
 
-    </script>
-  </body>
+</script>
 
+</body>
 </html>
