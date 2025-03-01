@@ -43,34 +43,48 @@
             display: flex;
             position: fixed;
             bottom: 0;
+            top: 0;
+            right: 0;
             justify-content: space-between;
+            padding: 0;
+            left: 0;
         }
 
         .left, .right, .centre {
             background-size: cover; /* Заполнение фона */
             background-position: center; /* Центрируем изображение */
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+            padding-top: 30%;
+
         }
         
         .left {
-            background-image: url("img/leftAlaska.webp");
+            background-image: url("img/l.png");
             padding: 0;
-            min-width: 600px;
+            min-width: 500px;
             min-height: 750px;
+            padding-top: 30%;
+            scale: 0.8;
+
         }
         .centre {
             background-image: url("img/auto.webp");
-            min-width: 600px;
+            min-width: 400px;
             min-height: 300px;
-            transform: scale(0.5);
             
             
         }
         .right {
-            background-image: url("img/rightAlya.webp");
-            min-width: 600px;
+            background-image: url("img/r.png");
+            min-width: 500px;
             min-height: 750px;
         }
         
+
+        @media (max-width: 1000px) {
+            
+        }
 
         @media (max-width: 700px) {
 
@@ -130,7 +144,7 @@
             <a href="pages/video.html"><img class="sticker" src="img/s1.png">Видево</a>
             <a href="#"><img class="sticker" src="img/s1.png">НЕГИФ</a>
             <a href="pages/voice.html"><img class="sticker" src="img/s1.png">Войсы</a>
-            <a href="pages/sosok.html"><img class="sticker" src="img/s1.png">Список</a>
+            <a href="#"><img class="sticker" src="img/s1.png">Список</a>
             <a href="#"><img class="sticker" src="img/s1.png">logo</a>
         </nav>
     
