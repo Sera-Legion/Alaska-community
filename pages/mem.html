@@ -6,119 +6,78 @@
     <link rel="stylesheet" href="../css/main.css">
     <title>Зимний Лес</title>
     <style>
+
+    .card {
+        height: 400px;
+        width: 100%;
+        perspective: 1000px;
+    }
+
+    .card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+    }
+
+    .card.flipped .card-inner {
+        transform: rotateY(180deg);
+    }
+    .card-front, .card-back {
+        background-color: #1F1F23; 
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        display: flex;
+        color: white;
+        border-radius: 10px;
+        background-size: contain; /* Изменено на contain */
+        background-repeat: no-repeat; /* Избегаем повторения изображения */
+        background-position: center; /* Центрируем изображение */
         
-.mainPng {
-    display: flex;
-    justify-content: space-between; /* Распределяем изображения по бокам */
-    position: fixed; /* Абсолютное позиционирование */
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1; /* Убедитесь, что изображения ниже кнопок */
-}
+    }
+
+    .text {
+        width: 100%;
+        height: auto;
+
+        border-radius: 10px;
+        text-align: left;
+        font-size: 24px; /* Увеличенный размер шрифта */
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .text p {
+        transform: translateX(-100%);
+        max-width: 30%;
+        margin-bottom: 0;
+
+    }
+
+    .card-front {
 
 
 
-.left, .right {
+            }
 
-    z-index: 0;
-    background-size: cover; /* Заполнение фона */
-    background-position: center; /* Центрируем изображение */
-}
+    .card-back {
+                transform: rotateY(180deg);
+                padding: -20px;
 
-.right {
-    
-    width: 500px;
-    height: 250px;
-    transform: translateX(-80%) translateY(110%);
-    background-image: url('../img/auto.webp'); /* Убедитесь, что это правильный путь к вашему изображению */
+    }
 
-}
+    .card-back .text{
+        padding-left: 5%;
+        padding-right: 5%;
+        background-color: rgba(0, 0, 0, 0.199); /* Более темный фон для текста */
 
-.left {
-    background-image: url('../img/clown-1.webp'); /* Убедитесь, что это правильный путь к вашему изображению */
-    min-width: 900px;
-    min-height: 900px;
-    padding-left: 20%;
-
-}
-
-
-.card {
-    height: 400px;
-    width: 100%;
-    perspective: 1000px;
-}
-
-.card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-}
-
-.card.flipped .card-inner {
-    transform: rotateY(180deg);
-}
-.card-front, .card-back {
-    background-color: #1F1F23; 
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    display: flex;
-    color: white;
-    border-radius: 10px;
-    background-size: contain; /* Изменено на contain */
-    background-repeat: no-repeat; /* Избегаем повторения изображения */
-    background-position: center; /* Центрируем изображение */
-    
-}
-
-.text {
-    width: 100%;
-    height: auto;
-
-    border-radius: 10px;
-    text-align: left;
-    font-size: 24px; /* Увеличенный размер шрифта */
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.text p {
-    transform: translateX(-100%);
-    max-width: 30%;
-    margin-bottom: 0;
-
-}
-
-.card-front {
-
-
-
-        }
-
-.card-back {
-            transform: rotateY(180deg);
-            padding: -20px;
-
-}
-
-.card-back .text{
-    padding-left: 5%;
-    padding-right: 5%;
-    background-color: rgba(0, 0, 0, 0.199); /* Более темный фон для текста */
-
-}
-
-
-
-
+    }
 
     .grid-container {
         display: grid;
@@ -157,8 +116,6 @@
     .black {
         width: 500px;
 
-        
-
     }
 
     .white img, .black img {
@@ -179,6 +136,39 @@
         color: #9146ff; /* Фиолетовый цвет Twitch */
     }
 
+    .mainPng {
+        display: flex;
+        justify-content: space-between; /* Распределяем изображения по бокам */
+        position: fixed; /* Абсолютное позиционирование */
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1; /* Убедитесь, что изображения ниже кнопок */
+    }
+
+    .left, .right {
+
+        z-index: 0;
+        background-size: cover; /* Заполнение фона */
+        background-position: center; /* Центрируем изображение */
+    }
+
+    .right {
+        
+        width: 500px;
+        height: 250px;
+        transform: translateX(-80%) translateY(110%);
+        background-image: url('../img/auto.webp'); /* Убедитесь, что это правильный путь к вашему изображению */
+
+    }
+
+    .left {
+        background-image: url('../img/clown-1.webp'); /* Убедитесь, что это правильный путь к вашему изображению */
+        min-width: 900px;
+        min-height: 900px;
+        padding-left: 20%;
+
+    }
 
         @media (max-width: 700px){
             main {
