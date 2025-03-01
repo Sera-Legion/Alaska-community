@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const links = [
         { text: 'home', href: '../index.html', imgSrc: '../img/s1.png' },
         { text: 'Мемы', href: '../pages/mem.html', imgSrc: '../img/s1.png' },
-        { text: 'Пасты', href: '#', imgSrc: '../img/s1.png' },
+        { text: 'Пасты', href: '../pages/paste.html', imgSrc: '../img/s1.png' },
         { text: 'Видево', href: '../pages/video.html', imgSrc: '../img/s1.png' },
         { text: 'НЕГИФ', href: '#', imgSrc: '../img/s1.png' },
         { text: 'Войсы', href: '../pages/voice.html', imgSrc: '../img/s1.png' },
