@@ -22,17 +22,6 @@ header {
     position: absolute;
 }
 
-#hvost {
-    left: 48.4%; /* Сдвигаем элемент к центру по горизонтали */
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
 .menu {
     display: none;
     width: 0;
@@ -61,7 +50,7 @@ nav a:last-child {
     opacity: 0;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 700px) { /* костыыль для нвыигвции*/
 
 
     nav a {
@@ -104,7 +93,16 @@ nav a:hover {
     cursor: pointer;
 }
 
+#hvost {
+    left: 48.4%; /* Сдвигаем элемент к центру по горизонтали */
+}
 
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
 .grid-container {
     z-index: 2;
@@ -120,6 +118,9 @@ footer {
     width: 100%;
     z-index: 100;
     font-size: large;
+    padding-bottom: 1px;
+    padding-top: 5px;
+
 }
 
 footer p {
@@ -141,28 +142,6 @@ footer p a {
 
 
 @media (max-width: 700px) {
-
-
-
-    #hvost-phone {
-        background-image: url("../img/hvost.png");
-        height: 55px;
-        width: 50px;
-        position: fixed;
-        z-index: 100;
-        cursor: pointer;
-        position: absolute;
-        top: 30px;
-    }
-    
-    .text p {
-        font-size: 15px;
-    }
-            
-    #hvost {
-        width: 0;
-        opacity: 0;
-    }
 
     header {
         height: 50px;
@@ -188,28 +167,24 @@ footer p a {
     }
 
     .zakladka::before {
-    content: '';
-	position: absolute;
-	left: 0;
-	right: 0;
-    top: 45px;
-    width: 0;
-	height: 0;
-	border-top: 12px solid #48257cb4;
-	border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-}
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 45px;
+        width: 0;
+        height: 0;
+        border-top: 12px solid #48257cb4;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+    }
 
 
     #zad {
         text-decoration: none;
     }
 
-    @keyframes magic {
-        0% {opacity: 0;}
-        100% {opacity: 1;}
-        
-      }
+
 
     nav {
         display: none; /* Скрыть навигацию по умолчанию */
@@ -293,12 +268,40 @@ footer p a {
         position: absolute;
     }
 
+    #hvost-phone {
+        background-image: url("../img/hvost.png");
+        height: 55px;
+        width: 50px;
+        position: fixed;
+        z-index: 100;
+        cursor: pointer;
+        position: absolute;
+        top: 30px;
+    }
+    
+    .text p {
+        font-size: 15px;
+    }
+            
+    #hvost {
+        width: 0;
+        opacity: 0;
+    }
+
     main {
         display: block;
     }
+
 
     .mainPng .right {
         display: none;
     }
 
+
+
+    @keyframes magic {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+        
+      }
 }
