@@ -154,3 +154,13 @@ document.getElementById('hvost').onclick = function(){
     }
 
 };
+
+// Отключение контекстного меню
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
+
+// Запретить выделение текста
+document.addEventListener('selectstart', function(e) {
+    e.preventDefault();
+});
