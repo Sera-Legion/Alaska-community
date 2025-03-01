@@ -60,7 +60,7 @@
         }
         
         .left {
-            background-image: url("img/l.png");
+            background-image: url("img/l.webp");
             padding: 0;
             min-width: 500px;
             min-height: 750px;
@@ -76,15 +76,92 @@
             
         }
         .right {
-            background-image: url("img/r.png");
+            background-image: url("img/r.webp");
             min-width: 500px;
             min-height: 750px;
         }
         
+        @media (min-width: 2000px) {
+            .mainPng {
+                padding-top: 7%;
+            }
 
-        @media (max-width: 1000px) {
+            .left {
+            min-width: 700px;
+            min-height: 850px;
+            transform: translateY(-10%); /* Поднимаем на половину высоты */
+
+
+        }
+        .centre {
+            min-width: 400px;
+            min-height: 300px;
+            
             
         }
+        .right {
+            min-width: 600px;
+            min-height: 850px;
+            transform: translateY(-10%); /* Поднимаем на половину высоты */
+        }
+        }
+
+        @media (min-width: 2500px) {
+            .mainPng {
+                padding-top: 15%;
+            }
+            
+        }
+
+        @media (max-width: 1400px) {
+            .left {
+
+            min-width: 450px;
+            min-height: 750px;
+            padding-top: 30%;
+            scale: 0.7;
+            padding-top: 15%;
+
+        }
+        .centre {
+            min-width: 300px;
+            min-height: 300px;
+            scale: 0.8;
+            
+            
+        }
+        .right {
+            min-width: 500px;
+            min-height: 750px;
+            scale: 0.7;
+            padding-top: 15%;
+
+        }
+        }
+
+        @media (max-width: 1200px) {
+            .left {
+
+            min-width: 400px;
+            min-height: 750px;
+            padding-top: 30%;
+            padding-top: 15%;
+
+        }
+        .centre {
+            min-width: 300px;
+            min-height: 300px;
+            scale: 0.8;
+            
+            
+        }
+        .right {
+            min-width: 400px;
+            min-height: 750px;
+
+        }
+        }
+
 
         @media (max-width: 700px) {
 
