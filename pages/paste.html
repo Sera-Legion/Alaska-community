@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+
+    <title>Зимний Лес</title>
+    <style>
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            width: 100%;            
+        }
+
+        .content {
+            background-color: #01070F45; /* ФОООООООНФ */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            color: #fff;
+        }
+
+        .highlight {
+            color: #ff4500; /* Алый цвет для акцентов */
+            font-weight: bold;
+        }
+
+        .phone {
+            display: none;
+        }
+
+        .mainPng {
+            display: flex;
+            position: fixed;
+            bottom: 0;
+            top: 0;
+            right: 0;
+            justify-content: space-between;
+            padding: 0;
+            left: 0;
+        }
+
+        .left, .right, .centre {
+            background-size: cover; /* Заполнение фона */
+            background-position: center; /* Центрируем изображение */
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+            padding-top: 30%;
+
+        }
+        
+        .left {
+            background-image: url("../img/l.webp");
+            padding: 0;
+            min-width: 500px;
+            min-height: 750px;
+            padding-top: 30%;
+            scale: 0.8;
+
+        }
+        .centre {
+            background-image: url("../img/auto.webp");
+            min-width: 400px;
+            min-height: 300px;
+            
+            
+        }
+        .right {
+            background-image: url("../img/r.webp");
+            min-width: 500px;
+            min-height: 750px;
+        }
+        
+        @media (min-width: 2000px) {
+            .mainPng {
+                padding-top: 7%;
+            }
+
+            .left {
+            min-width: 700px;
+            min-height: 850px;
+            transform: translateY(-10%); /* Поднимаем на половину высоты */
+
+
+        }
+        .centre {
+            min-width: 400px;
+            min-height: 300px;
+            
+            
+        }
+        .right {
+            min-width: 600px;
+            min-height: 850px;
+            transform: translateY(-10%); /* Поднимаем на половину высоты */
+        }
+        }
+
+        @media (min-width: 2500px) {
+            .mainPng {
+                padding-top: 15%;
+            }
+            
+        }
+
+        @media (max-width: 1400px) {
+            .left {
+
+            min-width: 450px;
+            min-height: 750px;
+            padding-top: 30%;
+            scale: 0.7;
+            padding-top: 15%;
+
+        }
+        .centre {
+            min-width: 300px;
+            min-height: 300px;
+            scale: 0.8;
+            
+            
+        }
+        .right {
+            min-width: 500px;
+            min-height: 750px;
+            scale: 0.7;
+            padding-top: 15%;
+
+        }
+        }
+
+        @media (max-width: 1200px) {
+            .left {
+
+            min-width: 400px;
+            min-height: 750px;
+            padding-top: 30%;
+            padding-top: 15%;
+
+        }
+        .centre {
+            min-width: 300px;
+            min-height: 300px;
+            scale: 0.8;
+            
+            
+        }
+        .right {
+            min-width: 400px;
+            min-height: 750px;
+
+        }
+        }
+
+
+        @media (max-width: 700px) {
+
+
+
+            .grid-container {
+                display: inline;
+                width: 90%;
+                margin-left: 7%;
+                padding: 0;
+                margin-top: 25%;
+                z-index: 100;
+            }
+
+            .content {
+                margin: 3px 3px 10% 3px;
+                
+
+            }
+
+            h2 {
+                font-size: larger;
+            }
+
+            .phone{
+                display: block;
+            }
+
+            .phone-del{
+                display: none;
+                
+            }
+
+            .right {
+                display: none;
+            }
+            .centre {
+                display: none;
+            }
+        }
+
+    </style>
+</head>
+<body>
+        <div id="hvost"></div>
+    <main>
+
+    <div class="grid-container">
+        <div class="content">
+            <h2>Добро пожаловать в зимний лес!</h2>
+            <p>Здесь вы сможете насладиться красотой природы в её зимнем обличии. Погрузитесь в атмосферу тишины и спокойствия.</p>
+            <p>Не забудьте обратить внимание на <span class="highlight">алые акценты</span>, которые добавляют яркости и контраста в этот холодный мир.</p>
+            <img class="phone" src="https://source.unsplash.com/600x400/?winter-forest" alt="Зимний лес">
+            
+        </div>
+        <img class="phone-del" src="https://source.unsplash.com/600x400/?winter-forest" alt="Зимний лес">
+
+
+        <img class="phone-del" src="https://source.unsplash.com/600x400/?icy-sea" alt="Заледеневшее море">
+
+        <div class="content">
+            <h2>Заледеневшее море</h2>
+            <p>Заледеневшее море — это невероятное зрелище, где ледяные блоки создают уникальные формы и текстуры.</p>
+            <p>Наблюдение за этим пейзажем может быть вдохновляющим и умиротворяющим.</p>
+            <img class="phone" src="https://source.unsplash.com/600x400/?icy-sea" alt="Заледеневшее море">
+        </div>
+
+
+
+        <div class="content">
+            <h2>Снежные пейзажи</h2>
+            <p>Снежные пейзажи завораживают своей красотой и спокойствием. Каждый шаг по свежему снегу — это настоящее удовольствие.</p>
+            <p>Погрузитесь в мир зимней сказки и насладитесь каждым моментом.</p>
+            <img class="phone" src="https://source.unsplash.com/600x400/?snow-landscape" alt="Снежный пейзаж">
+
+        </div>
+        <img class="phone-del" src="https://source.unsplash.com/600x400/?snow-landscape" alt="Снежный пейзаж">
+
+
+        
+        <img class="phone-del" src="https://source.unsplash.com/600x400/?frozen-lake" alt="Замёрзшее озеро">
+        <div class="content">
+            <h2>Замёрзшее озеро</h2>
+            <p>Замёрзшие озёра создают удивительные пейзажи и предлагают уникальные возможности для отдыха и развлечений.</p>
+            <p>Здесь можно покататься на коньках или просто насладиться красотой окружающей природы.</p>
+            <img class="phone" src="https://source.unsplash.com/600x400/?frozen-lake" alt="Замёрзшее озеро">
+
+        </div>
+    </div>
+</main>
+    <div class="mainPng">
+        <div class="left"></div>
+        <div class="centre"></div>
+        <div class="right"></div>
+    </div>
+    
+    <footer>
+        <p>©️ 2025 Права что-то там защищены.<br> 
+    Ссылка на страницу создателей<br>
+    <a href="#">(^///^)</a></p>
+        
+    </footer>
+
+    <script src="../js/header.js"></script>
+  </body>
+
+</html>
