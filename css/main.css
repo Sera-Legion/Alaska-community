@@ -259,7 +259,7 @@ footer p a {
         top: -80px;
     }
 
-    nav a:nth-child(8) .sticker, nav a:nth-child(1) .sticker {
+ nav a:nth-child(1) .sticker {
         max-width: 0;
         max-height: 0;
         position: absolute;
