@@ -45,11 +45,6 @@ nav a:first-child {
     opacity: 0;
 }
 
-nav a:last-child {
-    background-color: #2f4f4f;
-    opacity: 0;
-}
-
 @media (min-width: 700px) { /* костыыль для нвыигвции*/
 
 
