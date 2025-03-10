@@ -48,6 +48,10 @@ nav a:last-child {
         background-color: #9046ff00;
 }
 
+nav a:last-child::hover {
+        background-color: #9046ff00;
+}
+
 @media (min-width: 700px) { /* костыыль для нвыигвции*/
 
 
