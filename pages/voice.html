@@ -46,6 +46,72 @@
             border-radius: 5px;
             outline: none;
         }
+        .burger {
+            display: flex;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            margin: 20px;
+            position: relative;
+            text-wrap: nowrap;
+            padding-bottom: 0;
+            margin-bottom: 0;
+
+        }
+        .arrow {
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid black;
+            transition: transform 0.3s ease; /* Плавный переход для поворота */
+        }
+        .burger.active .arrow {
+            transform: rotate(180deg); /* Поворот стрелки на 180 градусов */
+        }
+        .menu {
+            display: none;
+            top: 50px;
+            left: 20px;
+            width: 350px;
+            border: 2px solid #333;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            color: blueviolet;
+        }
+        .menu.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .typewriter {
+            display: inline-block;
+            font-size: 1.5rem;
+            margin-top: 10px;
+        }
+        .letter {
+            display: inline-block;
+            opacity: 0;
+            animation: jump 0.5s forwards;
+        }
+        @keyframes jump {
+            0% {
+                transform: translateY(0);
+                opacity: 0;
+            }
+            50% {
+                transform: translateY(-10px); /* Высота прыжка */
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 <body>
@@ -60,36 +126,133 @@
                 <source src="voice/файл1.mp3" type="audio/mpeg">
                 Ваш браузер не поддерживает аудио.
             </audio>
+            
+            <div class="burger">
+                Описание<div class="arrow"></div>
+            </div>
+            <div class="menu">
+                <div class="menu-content">
+                    <h2 class="typewriter menuText">Меню 1</h2>
+                    <p class="typewriter infoText">Это текст внутри рамочки 1.</p>
+                    <div class="typewriter animatedText"></div> <!-- Здесь будет наш эффект -->
+                </div>
+            </div>
         </div>
+
         <div class="audio-card">
-            <div class="audio-description">Описание файла 2</div>
+            <div class="audio-description">Описание файла 1</div>
             <audio controls>
-                <source src="voice/файл2.mp3" type="audio/mpeg">
+                <source src="voice/файл1.mp3" type="audio/mpeg">
                 Ваш браузер не поддерживает аудио.
             </audio>
+            
+            <div class="burger">
+                Описание<div class="arrow"></div>
+            </div>
+            <div class="menu">
+                <div class="menu-content">
+                    <h2 class="typewriter menuText">Меню 1</h2>
+                    <p class="typewriter infoText">Это текст внутри рамочки 1.</p>
+                    <div class="typewriter animatedText"></div> <!-- Здесь будет наш эффект -->
+                </div>
+            </div>
         </div>
+
         <div class="audio-card">
-            <div class="audio-description">Описание файла 3</div>
+            <div class="audio-description">Описание файла 1</div>
             <audio controls>
-                <source src="voice/файл3.mp3" type="audio/mpeg">
+                <source src="voice/файл1.mp3" type="audio/mpeg">
                 Ваш браузер не поддерживает аудио.
             </audio>
+            
+            <div class="burger">
+                Описание<div class="arrow"></div>
+            </div>
+            <div class="menu">
+                <div class="menu-content">
+                    <h2 class="typewriter menuText">Меню 1</h2>
+                    <p class="typewriter infoText">Это текст внутри рамочки 1.</p>
+                    <div class="typewriter animatedText"></div> <!-- Здесь будет наш эффект -->
+                </div>
+            </div>
         </div>
+
         <div class="audio-card">
-            <div class="audio-description">Описание файла 4</div>
+            <div class="audio-description">Описание файла 1</div>
             <audio controls>
-                <source src="voice/файл4.mp3" type="audio/mpeg">
+                <source src="voice/файл1.mp3" type="audio/mpeg">
                 Ваш браузер не поддерживает аудио.
             </audio>
+            
+            <div class="burger">
+                Описание<div class="arrow"></div>
+            </div>
+            <div class="menu">
+                <div class="menu-content">
+                    <h2 class="typewriter menuText">Меню 1</h2>
+                    <p class="typewriter infoText">Это текст внутри рамочки 1.</p>
+                    <div class="typewriter animatedText"></div> <!-- Здесь будет наш эффект -->
+                </div>
+            </div>
         </div>
+
         <div class="audio-card">
-            <div class="audio-description">Описание файла 5</div>
+            <div class="audio-description">Описание файла 1</div>
             <audio controls>
-                <source src="voice/файл5.mp3" type="audio/mpeg">
+                <source src="voice/файл1.mp3" type="audio/mpeg">
                 Ваш браузер не поддерживает аудио.
             </audio>
+            
+            <div class="burger">
+                Описание<div class="arrow"></div>
+            </div>
+            <div class="menu">
+                <div class="menu-content">
+                    <h2 class="typewriter menuText">Меню 1</h2>
+                    <p class="typewriter infoText">Это текст внутри рамочки 1.</p>
+                    <div class="typewriter animatedText"></div> <!-- Здесь будет наш эффект -->
+                </div>
+            </div>
         </div>
-    </div>
+
+        <div class="audio-card">
+            <div class="audio-description">Описание файла 1</div>
+            <audio controls>
+                <source src="voice/файл1.mp3" type="audio/mpeg">
+                Ваш браузер не поддерживает аудио.
+            </audio>
+            
+            <div class="burger">
+                ОписаниеОписание<div class="arrow"></div>
+            </div>
+            <div class="menu">
+                <div class="menu-content">
+                    <h2 class="typewriter menuText">Меню 1</h2>
+                    <p class="typewriter infoText">Это текст внутри рамочки 1.</p>
+                    <div class="typewriter animatedText"></div> <!-- Здесь будет наш эффект -->
+                </div>
+            </div>
+        </div>
+
+        <div class="audio-card">
+            <div class="audio-description">Описание файла 1</div>
+            <audio controls>
+                <source src="voice/файл1.mp3" type="audio/mpeg">
+                Ваш браузер не поддерживает аудио.
+            </audio>
+            
+            <div class="burger">
+                Описание<div class="arrow"></div>
+            </div>
+            <div class="menu">
+                <div class="menu-content">
+                    <h2 class="typewriter menuText">Меню 1</h2>
+                    <p class="typewriter infoText">Это текст внутри рамочки 1.</p>
+                    <div class="typewriter animatedText"></div> <!-- Здесь будет наш эффект -->
+                </div>
+            </div>
+        </div>
+</div>
         </main>
     <footer>
     <p>©️ 2025 Права что-то там защищены.<br> 
@@ -98,5 +261,59 @@
     
 </footer>
     <script src="../js/header.js"></script>
+    <script>
+const burgers = document.querySelectorAll('.burger');
+
+burgers.forEach(burger => {
+    const menu = burger.nextElementSibling; // Получаем следующее за бургером меню
+    const animatedContainer = menu.querySelector('.animatedText'); // Контейнер для анимации текста
+    const animatedText = "Добро пожаловать!"; // Текст для анимации
+
+    burger.onclick = () => {
+        burger.classList.toggle('active'); // Добавляем класс для анимации стрелки
+        if (menu.classList.contains('show')) {
+            menu.classList.remove('show');
+            setTimeout(() => {
+                menu.style.display = 'none';
+            }, 300); // Задержка для завершения анимации
+        } else {
+            menu.style.display = 'block';
+            setTimeout(() => {
+                menu.classList.add('show');
+
+                // Анимация для "Меню"
+                const menuText = menu.querySelector('.menuText');
+                if (menuText) {
+                    animateText(menuText);
+                }
+
+                // Анимация для "Это текст внутри рамочки."
+                const infoText = menu.querySelector('.infoText');
+                if (infoText) {
+                    animateText(infoText);
+                }
+
+                // Анимация для "Добро пожаловать!"
+                if (animatedContainer) {
+                    animateText(animatedContainer, animatedText);
+                }
+            }, 10); // Небольшая задержка для активации анимации
+        }
+    };
+});
+
+function animateText(element, text = element.textContent) {
+    element.innerHTML = ''; // Очищаем элемент
+    text.split('').forEach((char, index) => {
+        const span = document.createElement('span');
+        span.classList.add('letter');
+        span.textContent = char === ' ' ? '\u00A0' : char; // Заменяем пробел на неразрывный пробел
+        span.style.animationDelay = `${index * 0.1}s`; // Задержка для каждого символа
+        element.appendChild(span);
+    });
+}
+
+</script>
+
 </body>
 </html>
