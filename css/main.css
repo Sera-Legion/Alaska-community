@@ -44,10 +44,10 @@ nav a:first-child {
     opacity: 0;
 }
 
-    nav a:-last-child(2):hover {
+    nav a:nth-last-child(2):hover {
         background-color: #9046ff00;
 }
-    nav a:-last-child(2):hover {
+    nav a:nth-last-child(2):hover {
         background-color: #9046ff00;
 }
 
