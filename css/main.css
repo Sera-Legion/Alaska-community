@@ -44,12 +44,7 @@ nav a:first-child {
     opacity: 0;
 }
 
-    nav a:nth-last-child(2):hover {
-        background-color: #9046ff00;
-}
-    nav a:nth-last-child(2):hover {
-        background-color: #9046ff00;
-}
+
 
 @media (min-width: 700px) { /* костыыль для нвыигвции*/
 
@@ -76,7 +71,12 @@ nav a:first-child {
 nav a:hover {
     background-color: #48257C; 
 }
-
+    nav a:nth-last-child(2):hover {
+        background-color: #9046ff00;
+}
+    nav a:nth-last-child(2):hover {
+        background-color: #9046ff00;
+}
 .sticker {
     max-width: 50px;
     max-height: 50px;
