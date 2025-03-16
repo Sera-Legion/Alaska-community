@@ -7,7 +7,7 @@
     <title>Войсы</title>
     <style>
         body {
-            background-color: #18181b; /* темный фон */
+            background-color: #0E0E10; /* темный фон */
             color: #ffffff; /* белый текст */
             font-family: Arial, sans-serif;
         }
@@ -33,7 +33,7 @@
             padding: 15px;
             margin: 10px 0;
             width: 100%;
-            max-width: 400px; /* максимальная ширина карточки */
+            max-width: 600px; /* максимальная ширина карточки */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
         .audio-description {
@@ -64,8 +64,11 @@
             height: 0;
             border-left: 10px solid transparent;
             border-right: 10px solid transparent;
-            border-top: 10px solid black;
+            border-top: 10px solid rgb(255, 255, 255);
             transition: transform 0.3s ease; /* Плавный переход для поворота */
+            transform: translateY(60%); 
+            margin-left: 10%;
+
         }
         .burger.active .arrow {
             transform: rotate(180deg); /* Поворот стрелки на 180 градусов */
@@ -74,16 +77,16 @@
             display: none;
             top: 50px;
             left: 20px;
-            width: 350px;
+            width: 95%;
             height: 100%;
-            border: 2px solid #333;
+            border: 2px solid #4B4B4B;
             border-radius: 10px;
             padding: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             opacity: 0;
             transform: translateY(-10px);
             transition: opacity 0.3s ease, transform 0.3s ease;
-            color: blueviolet;
+            color: #fff;
         }
         .menuV.show {
             display: block;
@@ -114,7 +117,16 @@
                 opacity: 1;
             }
         }
+        @media (max-width: 700px) {
+            .audio-container {
+                align-items: end;
+                padding-right: 0;
+            }
+            .audio-card {
+                max-width: 300px;
 
+            }
+        }
     </style>
 </head>
 <body>
@@ -264,59 +276,7 @@
     
 </footer>
     <script src="../js/header.js"></script>
-    <script>
-const burgers = document.querySelectorAll('.burger');
-
-burgers.forEach(burger => {
-    const menu = burger.nextElementSibling; // Получаем следующее за бургером меню
-    const animatedContainer = menu.querySelector('.animatedText'); // Контейнер для анимации текста
-    const animatedText = "Добро пожаловать!"; // Текст для анимации
-
-    burger.onclick = () => {
-        burger.classList.toggle('active'); // Добавляем класс для анимации стрелки
-        if (menu.classList.contains('show')) {
-            menu.classList.remove('show');
-            setTimeout(() => {
-                menu.style.display = 'none';
-            }, 300); // Задержка для завершения анимации
-        } else {
-            menu.style.display = 'block';
-            setTimeout(() => {
-                menu.classList.add('show');
-
-                // Анимация для "Меню"
-                const menuText = menu.querySelector('.menuText');
-                if (menuText) {
-                    animateText(menuText);
-                }
-
-                // Анимация для "Это текст внутри рамочки."
-                const infoText = menu.querySelector('.infoText');
-                if (infoText) {
-                    animateText(infoText);
-                }
-
-                // Анимация для "Добро пожаловать!"
-                if (animatedContainer) {
-                    animateText(animatedContainer, animatedText);
-                }
-            }, 10); // Небольшая задержка для активации анимации
-        }
-    };
-});
-
-function animateText(element, text = element.textContent) {
-    element.innerHTML = ''; // Очищаем элемент
-    text.split('').forEach((char, index) => {
-        const span = document.createElement('span');
-        span.classList.add('letter');
-        span.textContent = char === ' ' ? '\u00A0' : char; // Заменяем пробел на неразрывный пробел
-        span.style.animationDelay = `${index * 0.1}s`; // Задержка для каждого символа
-        element.appendChild(span);
-    });
-}
-
-</script>
+    <script src="../js/discribe.js"></script>
 
 </body>
 </html>
