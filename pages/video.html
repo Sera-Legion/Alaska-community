@@ -7,97 +7,400 @@
     <title>Twitch Video Gallery</title>
     <style>
         body {
-            background-color: #1e1e1e;
+            background-color: #0E0E10;
             color: white;
             font-family: Arial, sans-serif;
             align-items: normal;
         }
 
         main {
-            padding-top: 7%;
-            display: block;
+            padding-top: 3%;
+            display: flex;
+            flex-direction: inherit; 
+            align-items: normal; 
+            justify-content: center; 
+
         }
+
         h1 {
             text-align: center;
             color: #9146ff;
+            padding-top: 6%;
         }
         .video-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 2 колонки */
-            gap: 50px;
-            margin: 5%;
-            margin-left: 20%;
-            margin-right: 20%;
+            margin: 3%;
             margin-top: 20px;
+            z-index: 2;
 
         }
+
+        #leftcolumn {
+            grid-template-columns: repeat(1, 1fr); /* 2 колонки */
+
+        }
+
+        #rightcolumn {
+            grid-template-columns: repeat(1, 1fr); /* 2 колонки */
+        }
+
         .video {
+            margin-bottom: 10%;
             border: 2px solid #9146ff;
             border-radius: 8px;
             overflow: hidden;
-            padding: 7px;
+            padding: 20px;
+            width: 600px;
+            background-color: #0b0a0ca1;
+
         }
         iframe {
             width: 100%;
             height: 315px;
         }
 
+        .burger {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            position: relative;
+            text-wrap: nowrap;
+            padding-left: 2%;
+            font-size: 25px;
+            padding-bottom: 2%;
+            margin-bottom: 20px;
+
+        }
+        .arrow {
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-top: 15px solid rgb(255, 255, 255);
+            transition: transform 0.3s ease; /* Плавный переход для поворота */
+            transform: translateY(60%); 
+            margin-left: 10%;
+
+        }
+        .burger.active .arrow {
+            transform: rotate(180deg); /* Поворот стрелки на 180 градусов */
+
+        }
+        .menuV {
+            display: none;
+            left: 20px;
+            width: 95%;
+            border: 2px solid #372343;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            color: #fff;
+        }
+        .menuV.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+            padding: 10px;
+
+        }
+        .typewriter {
+            display: inline-block;
+            font-size: 1.5rem;
+            margin-top: 10px;
+        }
+        .letter {
+            display: inline-block;
+            opacity: 0;
+            animation: jump 0.5s forwards;
+        }
+
+        .mainPng {
+            display: flex;
+            justify-content: space-between;
+            position: fixed; /* Абсолютное позиционирование */
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1; /* Убедитесь, что изображения ниже кнопок */
+        }
+
+        .left, .right {
+
+            z-index: 0;
+            background-size: cover; /* Заполнение фона */
+            background-position: center; /* Центрируем изображение */
+        }
+
+        .right {
+            height: 950px;
+            width: 700px;
+            
+            background-image: url('../img/rightvideo.webp'); /* Убедитесь, что это правильный путь к вашему изображению */
+
+        }
+
+        .left {
+            background-image: url('../img/sq.webp'); /* Убедитесь, что это правильный путь к вашему изображению */
+            height: 900px;
+            width: 300px;
+            padding-right: 200px;
+            transform: translateX(-204px) translateY(-500px);
+
+        }
+
+        @keyframes jump {
+            0% {
+                transform: translateY(0);
+                opacity: 0;
+            }
+            50% {
+                transform: translateY(-10px); /* Высота прыжка */
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
         @media (max-width: 1800px) {
             .video-container {
                 gap: 20px;
-                grid-template-columns: repeat(1, 1fr); /* 2 колонки */
 
             }
+
 
             iframe {
             height: 215px;
         }
+
+        @media (max-width: 2300px) {
+
+            .right {
+                height: 470px;
+                width: 350px;
+                padding-bottom: 200px;
+                padding-left: 120px;
+
+
+            }
+
+            .left {
+                height: 600px;
+                width: 200px;
+                padding-right: 200px;
+                transform: translateX(-170px) translateY(-300px);
+
+
+            }
+            }
+
         @media (max-width: 700px) {
-            
+            h1 {
+                padding-top: 20%;
+            }
+            main {
+                display: block;
+            }
+            .burger {
+                font-size: 15px;
+
+            }
+            .video {
+                max-width: 300px;
+            }
+            .video-container { 
+                justify-items: end;
+            }
         }
         }
+
     </style>
 </head>
 <body>
     <div id="hvost"></div>
-    <main>
     <h1>Видео на Twitch</h1>
-    <div class="video-container">
+
+    <main>
+    <div class="video-container" id="leftcolumn">
         <div class="video">
             <iframe src="https://www.youtube.com/embed/ZozLP9imUVc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            
+            <div class="burger">
+                Туть текст (название, описание... я ебу)<div class="arrow"></div>
+            </div>
+
+            <div class="menuV">
+                <div class="menu-content">
+                    <h2 class="typewriter menuText">Меню 1</h2>
+                    <p class="typewriter infoText">Это текст внутри рамочки 1.</p>
+                    <div class="typewriter animatedText"></div> <!-- Здесь будет наш эффект -->
+                </div>
+            </div>
+
+
         </div>
         <div class="video">
             <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        
+            <div class="burger">
+                Туть текст (название, описание... я ебу)<div class="arrow"></div>
+            </div>
+
+            <div class="menuV">
+                <div class="menu-content">
+                    <h2 class="typewriter menuText">Меню 1</h2>
+                    <p class="typewriter infoText">Это текст внутри рамочки 1.</p>
+                    <div class="typewriter animatedText"></div> <!-- Здесь будет наш эффект -->
+                </div>
+            </div>
         </div>
         <div class="video">
             <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div class="burger">
+                Туть текст (название, описание... я ебу)<div class="arrow"></div>
+            </div>
+
+            <div class="menuV">
+                <div class="menu-content">
+                    <h2 class="typewriter menuText">Меню 1</h2>
+                    <p class="typewriter infoText">Это текст внутри рамочки 1.</p>
+                    <div class="typewriter animatedText"></div> <!-- Здесь будет наш эффект -->
+                </div>
+            </div>
         </div>
         <div class="video">
             <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div class="burger">
+                Туть текст (название, описание... я ебу)<div class="arrow"></div>
+            </div>
+
+            <div class="menuV">
+                <div class="menu-content">
+                    <h2 class="typewriter menuText">Меню 1</h2>
+                    <p class="typewriter infoText">Это текст внутри рамочки 1.</p>
+                    <div class="typewriter animatedText"></div> <!-- Здесь будет наш эффект -->
+                </div>
+            </div>
         </div>
         <div class="video">
             <iframe src="https://www.youtube.com/embed/VIDEO_ID_5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div class="burger">
+                Туть текст (название, описание... я ебу)<div class="arrow"></div>
+            </div>
+
+            <div class="menuV">
+                <div class="menu-content">
+                    <h2 class="typewriter menuText">Меню 1</h2>
+                    <p class="typewriter infoText">Это текст внутри рамочки 1.</p>
+                    <div class="typewriter animatedText"></div> <!-- Здесь будет наш эффект -->
+                </div>
+            </div>
         </div>
         <div class="video">
             <iframe src="https://www.youtube.com/embed/VIDEO_ID_6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div class="burger">
+                Туть текст (название, описание... я ебу)<div class="arrow"></div>
+            </div>
+
+            <div class="menuV">
+                <div class="menu-content">
+                    <h2 class="typewriter menuText">Меню 1</h2>
+                    <p class="typewriter infoText">Это текст внутри рамочки 1.</p>
+                    <div class="typewriter animatedText"></div> <!-- Здесь будет наш эффект -->
+                </div>
+            </div>
         </div>
+        </div>
+        <div class="video-container" id="rightcolumn">
         <div class="video">
             <iframe src="https://www.youtube.com/embed/VIDEO_ID_7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div class="burger">
+                Туть текст (название, описание... я ебу)<div class="arrow"></div>
+            </div>
+
+            <div class="menuV">
+                <div class="menu-content">
+                    <h2 class="typewriter menuText">Меню 1</h2>
+                    <p class="typewriter infoText">Это текст внутри рамочки 1.</p>
+                    <div class="typewriter animatedText"></div> <!-- Здесь будет наш эффект -->
+                </div>
+            </div>
         </div>
         <div class="video">
             <iframe src="https://www.youtube.com/embed/VIDEO_ID_8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div class="burger">
+                Туть текст (название, описание... я ебу)<div class="arrow"></div>
+            </div>
+
+            <div class="menuV">
+                <div class="menu-content">
+                    <h2 class="typewriter menuText">Меню 1</h2>
+                    <p class="typewriter infoText">Это текст внутри рамочки 1.</p>
+                    <div class="typewriter animatedText"></div> <!-- Здесь будет наш эффект -->
+                </div>
+            </div>
         </div>
         <div class="video">
             <iframe src="https://www.youtube.com/embed/VIDEO_ID_9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div class="burger">
+                Туть текст (название, описание... я ебу)<div class="arrow"></div>
+            </div>
+
+            <div class="menuV">
+                <div class="menu-content">
+                    <h2 class="typewriter menuText">Меню 1</h2>
+                    <p class="typewriter infoText">Это текст внутри рамочки 1.</p>
+                    <div class="typewriter animatedText"></div> <!-- Здесь будет наш эффект -->
+                </div>
+            </div>
         </div>
         <div class="video">
             <iframe src="https://www.youtube.com/embed/VIDEO_ID_10" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div class="burger">
+                Туть текст (название, описание... я ебу)<div class="arrow"></div>
+            </div>
+
+            <div class="menuV">
+                <div class="menu-content">
+                    <h2 class="typewriter menuText">Меню 1</h2>
+                    <p class="typewriter infoText">Это текст внутри рамочки 1.</p>
+                    <div class="typewriter animatedText"></div> <!-- Здесь будет наш эффект -->
+                </div>
+            </div>
         </div>
         <div class="video">
             <iframe src="https://www.youtube.com/embed/VIDEO_ID_11" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div class="burger">
+                Туть текст (название, описание... я ебу)<div class="arrow"></div>
+            </div>
+
+            <div class="menuV">
+                <div class="menu-content">
+                    <h2 class="typewriter menuText">Меню 1</h2>
+                    <p class="typewriter infoText">Это текст внутри рамочки 1.</p>
+                    <div class="typewriter animatedText"></div> <!-- Здесь будет наш эффект -->
+                </div>
+            </div>
         </div>
         <div class="video">
             <iframe src="https://www.youtube.com/embed/ZozLP9imUVc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div class="burger">
+                Туть текст (название, описание... я ебу)<div class="arrow"></div>
+            </div>
+
+            <div class="menuV">
+                <div class="menu-content">
+                    <h2 class="typewriter menuText">Меню 1</h2>
+                    <p class="typewriter infoText">Это текст внутри рамочки 1.</p>
+                    <div class="typewriter animatedText"></div> <!-- Здесь будет наш эффект -->
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="mainPng">
+            <div class="left"></div>
+            <div class="right"></div>
         </div>
     </main>
         <footer>
@@ -106,5 +409,7 @@
         <a href="#">(^///^)</a></p>
         </footer>
             <script src="../js/header.js"></script>
+            <script src="../js/discribe.js"></script>
+
       </body>
     </html>
