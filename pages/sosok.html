@@ -7,7 +7,7 @@
     <title>Страница в цветах Twitch</title>
     <style>
         body {
-            background-color: #2C2F33; /* Фоновый цвет Twitch */
+            background-color: #0E0E10; /* Фоновый цвет Twitch */
             color: white; /* Цвет текста */
             font-family: Arial, sans-serif;
             text-align: center;
@@ -21,13 +21,14 @@
             margin-bottom: 20px;
         }
         .table-container {
-            background-color: #9146FF; /* Цвет контейнера */
+            background-color: #48257C; /* Цвет контейнера */
             border-radius: 8px;
             padding: 20px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
             display: inline-block;
-            width: 90%;
+            width: 60%;
             height: 80vh;
+            z-index: 2;
         }
 
         iframe {
@@ -35,9 +36,47 @@
             height: 80vh;
         }
 
+
+        .mainPng {
+            display: flex;
+            justify-content: space-between;
+            position: fixed; /* Абсолютное позиционирование */
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1; /* Убедитесь, что изображения ниже кнопок */
+        }
+
+        .left, .right {
+
+            z-index: 0;
+            background-size: cover; /* Заполнение фона */
+            background-position: center; /* Центрируем изображение */
+        }
+
+        .right {
+            height: 900px;
+            width: 300px;
+            margin-right: 20px;
+            padding-right: 20px;
+
+            background-image: url('../img/hatF.png'); /* Убедитесь, что это правильный путь к вашему изображению */
+
+        }
+
+        .left {
+            background-image: url('../img/nohat.png'); /* Убедитесь, что это правильный путь к вашему изображению */
+            height: 900px;
+            width: 300px;
+            padding-right: 20px;
+
+        }
+
     </style>
 </head>
 <body>
+    <div id="hvost"></div>
+
     <main>
 
     <h1>Данные из Google Таблицы</h1>
@@ -45,6 +84,10 @@
         <iframe src="https://docs.google.com/spreadsheets/d/1zPUSymvaSZgxFsrZRKuwUh9fUUXbF0LLTgXxhr0op3U/pubhtml?widget=true&amp;headers=false" width="600" height="400"></iframe>
     </div>
 
+    <div class="mainPng">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
 </main>
 
 <footer>
