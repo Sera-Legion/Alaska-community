@@ -1,50 +1,433 @@
-const burgers = document.querySelectorAll('.burger');
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>Зимний Лес</title>
+    <style>
 
-burgers.forEach(burger => {
-    const menu = burger.nextElementSibling; // Получаем следующее за бургером меню
-    const animatedContainer = menu.querySelector('.animatedText'); // Контейнер для анимации текста
-    const animatedText = "Добро пожаловать!"; // Текст для анимации
+    .card {
+        height: 400px;
+        width: 100%;
+        perspective: 1000px;
+    }
 
-    burger.onclick = () => {
-        burger.classList.toggle('active'); // Добавляем класс для анимации стрелки
-        if (menu.classList.contains('show')) {
-            menu.classList.remove('show');
-            setTimeout(() => {
-                menu.style.display = 'none';
-            }, 300); // Задержка для завершения анимации
-        } else {
-            menu.style.display = 'block';
-            setTimeout(() => {
-                menu.classList.add('show');
+    .card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+    }
 
-                // Анимация для "Меню"
-                const menuText = menu.querySelector('.menuText');
-                if (menuText) {
-                    animateText(menuText);
-                }
+    .card.flipped .card-inner {
+        transform: rotateY(180deg);
+    }
+    .card-front, .card-back {
+        background-color: #1F1F23; 
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        display: flex;
+        color: white;
+        border-radius: 10px;
+        background-size: contain; /* Изменено на contain */
+        background-repeat: no-repeat; /* Избегаем повторения изображения */
+        background-position: center; /* Центрируем изображение */
+        
+    }
 
-                // Анимация для "Это текст внутри рамочки."
-                const infoText = menu.querySelector('.infoText');
-                if (infoText) {
-                    animateText(infoText);
-                }
+    .text {
+        width: 100%;
+        height: auto;
 
-                // Анимация для "Добро пожаловать!"
-                if (animatedContainer) {
-                    animateText(animatedContainer, animatedText);
-                }
-            }, 10); // Небольшая задержка для активации анимации
-        }
-    };
-});
+        border-radius: 10px;
+        text-align: left;
+        font-size: 24px; /* Увеличенный размер шрифта */
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 
-function animateText(element, text = element.textContent) {
-    element.innerHTML = ''; // Очищаем элемент
-    text.split('').forEach((char, index) => {
-        const span = document.createElement('span');
-        span.classList.add('letter');
-        span.textContent = char === ' ' ? '\u00A0' : char; // Заменяем пробел на неразрывный пробел
-        span.style.animationDelay = `${index * 0.1}s`; // Задержка для каждого символа
-        element.appendChild(span);
-    });
-}
+    .text p {
+        transform: translateX(-100%);
+        max-width: 30%;
+        margin-bottom: 0;
+
+    }
+
+    .card-front {
+
+
+
+            }
+
+    .card-back {
+                transform: rotateY(180deg);
+                padding: -20px;
+
+    }
+
+    .card-back .text{
+        padding-left: 5%;
+        padding-right: 5%;
+        background-color: rgba(0, 0, 0, 0.199); /* Более темный фон для текста */
+
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки */
+        gap: 100px; /* Промежуток между элементами */
+        z-index: 6;
+        justify-items: center; /* Центрирование элементов внутри сетки */
+        justify-content: center; /* Центрирование всего контейнера */
+        z-index: 50;
+    }
+
+    .content {
+        padding: 15px;
+        border-radius: 8px;
+        text-align: center;
+        z-index: 50;
+
+        
+    }
+
+    .white, .black {
+
+        margin: auto;
+        padding: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    /* Фон для белых и черных элементов */
+    .white {
+        width: 550px;
+    }
+
+    .black {
+        width: 500px;
+
+    }
+
+    .white img, .black img {
+
+
+
+    }
+
+
+    /* Стили для изображений */
+    .phone-del {
+        width: 100%; /* Изображения занимают всю ширину ячейки */
+        border-radius: 8px;
+    }
+
+    h1 {
+        text-align: center;
+        color: #9146ff; /* Фиолетовый цвет Twitch */
+    }
+
+    .mainPng {
+        display: flex;
+        justify-content: space-between; /* Распределяем изображения по бокам */
+        position: fixed; /* Абсолютное позиционирование */
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1; /* Убедитесь, что изображения ниже кнопок */
+    }
+
+    .left, .right {
+
+        z-index: 0;
+        background-size: cover; /* Заполнение фона */
+        background-position: center; /* Центрируем изображение */
+    }
+
+    .right {
+        
+        width: 500px;
+        height: 250px;
+        transform: translateX(-80%) translateY(110%);
+        background-image: url('../img/auto.webp'); /* Убедитесь, что это правильный путь к вашему изображению */
+
+    }
+
+    .left {
+        background-image: url('../img/clown-1.webp'); /* Убедитесь, что это правильный путь к вашему изображению */
+        min-width: 900px;
+        min-height: 900px;
+        padding-left: 20%;
+
+    }
+
+        @media (max-width: 700px){
+            main {
+                width: 100%;
+                margin-top: 13%;
+            }
+            .card {
+                height: 260px;
+
+            }
+            .grid-container {
+
+                display: grid; /* Убедитесь, что это grid */
+                grid-template-columns: 1fr; /* Одна колонка на маленьких экранах */
+                margin: 0;
+                margin-left: 10%;
+                gap: 0;
+
+            }
+
+            .content {
+                width: 90%; /* Убедитесь, что контейнер не превышает ширину экрана */
+                padding: 10px;
+                margin-top: 10%;
+                max-height: 100vh;
+            }
+
+            .white img, .white, .black, .black img {
+                max-width: 380px;
+            }
+            }
+            @media (max-width: 370px){
+                .content {
+                max-width: 320px;
+                margin-bottom: 10%;
+                max-height: 100vh;
+            }
+
+            .content .black .card .card-inner .card-front img {
+               width: 60%;
+            }
+            }
+
+    </style>
+</head>
+<body>
+    <div id="hvost"></div>
+<main>
+    <div class="grid-container">
+    <div class="content white">
+        <div class="card" id="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div class="text">
+                        <img style="width: 60%;
+                                    height: 70%" src="../img/a_scarf.webp" >
+                        <p>Аляска в шарфике</p>
+
+                    </div>
+                </div>
+            
+            <div class="card-back">
+
+                    <div class="text">
+    <p>
+        Каждый твой стрим освещает наш путь,<br>
+    </p>
+        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content black">
+        <div class="card" id="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div class="text">
+                        <img style="width: 90%;
+                                    height: auto" src="../img/british.webp"  sizes="(max-width: 768px) 60%, 70%">
+                        <p>Аляска BritishWave</p>
+
+
+                    </div>
+                </div>
+                <div class="card-back">
+
+                    <div class="text">
+    <p>
+        Каждый твой стрим освещает наш путь,<br>
+    </p>
+        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content black">
+        <div class="card" id="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div class="text">
+                        <img style="width: 90%;
+                                    height: 70%" src="../img/british.webp">
+                        <p>Аляска BritishWave</p>
+
+
+                    </div>
+                </div>
+                <div class="card-back">
+
+                    <div class="text">
+    <p>
+        Каждый твой стрим освещает наш путь,<br>
+    </p>
+        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content white">
+        <div class="card" id="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div class="text">
+                        <img style="width: 60%;
+                                    height: 70%" src="../img/a_scarf.webp">
+                        <p>Аляска в шарфике</p>
+
+                    </div>
+                </div>
+            
+            <div class="card-back">
+
+                    <div class="text">
+    <p>
+        Каждый твой стрим освещает наш путь,<br>
+    </p>
+        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content white">
+        <div class="card" id="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div class="text">
+                        <img style="width: 60%;
+                                    height: 70%" src="../img/a_scarf.webp">
+                        <p>Аляска в шарфике</p>
+
+                    </div>
+                </div>
+            
+            <div class="card-back">
+
+                    <div class="text">
+    <p>
+        Каждый твой стрим освещает наш путь,<br>
+    </p>
+        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content black">
+        <div class="card" id="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div class="text">
+                        <img style="width: 90%;
+                                    height: 70%" src="../img/british.webp">
+                        <p>Аляска BritishWave</p>
+
+
+                    </div>
+                </div>
+                <div class="card-back">
+
+                    <div class="text">
+    <p>
+        Каждый твой стрим освещает наш путь,<br>
+    </p>
+        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content black">
+        <div class="card" id="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div class="text">
+                        <img style="width: 90%;
+                                    height: 70%" src="../img/british.webp">
+                        <p>Аляска BritishWave</p>
+
+
+                    </div>
+                </div>
+                <div class="card-back">
+
+                    <div class="text">
+    <p>
+        Каждый твой стрим освещает наш путь,<br>
+    </p>
+        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content white">
+        <div class="card" id="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div class="text">
+                        <img style="width: 60%;
+                                    height: 70%" src="../img/a_scarf.webp">
+                        <p>Аляска в шарфике</p>
+
+                    </div>
+                </div>
+            
+            <div class="card-back">
+
+                    <div class="text">
+    <p>
+        Каждый твой стрим освещает наш путь,<br>
+    </p>
+        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div class="mainPng">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+</main>
+
+
+<footer>
+    <p>©️ 2025 Права что-то там защищены.<br> 
+Ссылка на страницу создателей<br>
+<a href="#">(^///^)</a></p>
+    
+</footer>
+
+    <script src="../js/header.js"></script>
+
+  </body>
+
+</html>
