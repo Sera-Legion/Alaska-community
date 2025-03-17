@@ -7,13 +7,11 @@
     <title>Сайт Аляски</title>
     <style>
         body {
-             
             background-color: #0E0E10;
             color: #ffffff;
             font-family: Arial, sans-serif;
-           
-        }
 
+        }
 
         main {
    
@@ -25,6 +23,8 @@
         .container {
             max-width: 800px;
             width: 100%;
+            z-index: 3;
+
         }
         h1 {
             color: #9146ff;
@@ -166,7 +166,25 @@
             border: 2px solid #9146ff;
         }
 
-     
+
+        
+    .mainPng {
+        display: flex;
+        justify-content: center; /* Распределяем изображения по бокам */
+        position: fixed; /* Абсолютное позиционирование */
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1; /* Убедитесь, что изображения ниже кнопок */
+    }
+
+    .left {
+        background-image: url('img/main.webp'); /* Убедитесь, что это правильный путь к вашему изображению */
+        min-width: 900px;
+        min-height: 900px;
+        padding-left: 20%;
+
+    }
     </style>
 </head>
 <body>
@@ -185,7 +203,7 @@
             <a href="pages/video.html"><img class="sticker" src="img/s1.png">Видево</a>
             <a href="#"><img class="sticker" src="img/s1.png">НЕГИФ</a>
             <a href="pages/voice.html"><img class="sticker" src="img/s1.png">Войсы</a>
-            <a href="pages/spisok.html"><img class="sticker" src="img/s1.png">Список</a>
+            <a href="pages/sosok.html"><img class="sticker" src="img/s1.png">Список</a>
             <a href="pages/cam.html"><img class="sticker" src="img/cam.png"></a>
         </nav>
     
@@ -271,6 +289,10 @@
         <div class="line2"></div>
         <div class="diamond2">♥</div> <!-- Символ ромба -->
         <div class="line2"></div>
+</div>
+</div>  
+<div class="mainPng">
+    <div class="left"></div>
 </div>
 </main>
 <footer>
