@@ -165,7 +165,6 @@ footer p a {
     header {
         height: 50px;
         position: fixed;
-        z-index: 100;
     }
 
     .menu {
