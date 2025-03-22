@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { text: 'НЕГИФ', href: '#', imgSrc: '../img/s1.png' },
         { text: 'Войсы', href: '../pages/voice.html', imgSrc: '../img/s1.png' },
         { text: 'Список', href: '../pages/spisok.html', imgSrc: '../img/s1.png' },
-        { text: ' ', href: '../pages/cam.html', imgSrc: '../img/cam.png' }
+        { text: ' ', href: '../pages/camouflage.html', imgSrc: '../img/cam.png' }
 
     ];
 
