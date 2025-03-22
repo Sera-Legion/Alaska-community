@@ -1,1 +1,87 @@
+html
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitch Video Gallery</title>
+    <style>
+        body {
+            background-color: #1c1c1e;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .card {
+            display: flex;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            padding: 15px;
+            max-width: 600px;
+        }
+
+        .card-img {
+            width: 30%;
+            border-radius: 50px 0 0 50px;
+        }
+
+        .card-content {
+            padding: 10px;
+            width: 70%;
+        }
+
+        h2 {
+            margin: 0 0 10px 0;
+        }
+
+        .icon-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <img src="../img/909.jpg" alt="Изображение 1" class="card-img">
+            <div class="card-content">
+                <h2>Заголовок 1</h2>
+                <p>Описание карточки 1. Здесь может быть текст.</p>
+                <a href="page1.html" class="icon-link">🔗</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="../img/909.jpg" alt="Изображение 2" class="card-img">
+            <div class="card-content">
+                <h2>Заголовок 2</h2>
+                <p>Описание карточки 2. Здесь может быть текст.</p>
+                <a href="page2.html" class="icon-link">🔗</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="../img/909.jpg" alt="Изображение 3" class="card-img">
+            <div class="card-content">
+                <h2>Заголовок 3</h2>
+                <p>Описание карточки 3. Здесь может быть текст.</p>
+                <a href="page3.html" class="icon-link">🔗</a>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
 
