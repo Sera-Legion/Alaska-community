@@ -169,20 +169,34 @@
 
         
     .mainPng {
-        display: flex;
-        justify-content: end; /* Распределяем изображения по бокам */
         position: fixed; /* Абсолютное позиционирование */
+        display: flex;
+        justify-content: space-between;
         left: 0;
         right: 0;
         bottom: 0;
+        top: 20%;
         z-index: 1; /* Убедитесь, что изображения ниже кнопок */
+        
+
     }
 
     .left {
-        background-image: url('img/main.webp'); /* Убедитесь, что это правильный путь к вашему изображению */
-        min-width: 900px;
-        min-height: 900px;
+        background-image: url('img/fon.png'); /* Убедитесь, что это правильный путь к вашему изображению */
+        height: 100vh;
+        width: 40%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        
 
+    }
+
+    .right {
+        background-image: url('img/main.webp'); /* Убедитесь, что это правильный путь к вашему изображению */
+        height: 90vh;
+        width: 40%;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
     </style>
 </head>
@@ -203,7 +217,7 @@
             <a href="#"><img class="sticker" src="img/s1.png">НЕГИФ</a>
             <a href="pages/voice.html"><img class="sticker" src="img/s1.png">Войсы</a>
             <a href="pages/spisok.html"><img class="sticker" src="img/s1.png">Список</a>
-            <a href="pages/camouflage.html"><img class="sticker" src="img/cam.png"></a>
+            <a href="pages/camouflage.html"><img class="sticker" src="img/camouflage.png"></a>
         </nav>
     
     
@@ -292,6 +306,8 @@
 </div>  
 <div class="mainPng">
     <div class="left"></div>
+    <div class="right"></div>
+
 </div>
 </main>
 <footer>
