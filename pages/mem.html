@@ -155,17 +155,17 @@
 
     .right {
         
-        width: 500px;
-        height: 250px;
-        transform: translateX(-80%) translateY(110%);
+        height: 22vh;
+        width: 20%;
         background-image: url('../img/auto.webp'); /* Убедитесь, что это правильный путь к вашему изображению */
+        transform: translateX(-370px) translateY(350px);
 
     }
 
     .left {
         background-image: url('../img/clown-1.webp'); /* Убедитесь, что это правильный путь к вашему изображению */
-        min-width: 900px;
-        min-height: 900px;
+        height: 80vh;
+        width: 40%;
         padding-left: 20%;
 
     }
@@ -199,6 +199,25 @@
             .white img, .white, .black, .black img {
                 max-width: 380px;
             }
+
+            .mainPng {
+                justify-content: none;
+                display: inline;
+            }
+
+            .right {
+        
+                display: none;
+
+            }
+
+            .left {
+
+                height: 90vh;
+                width: 90vh;
+
+
+            }
             }
             @media (max-width: 370px){
                 .content {
@@ -210,6 +229,8 @@
             .content .black .card .card-inner .card-front img {
                width: 60%;
             }
+
+
             }
 
     </style>
