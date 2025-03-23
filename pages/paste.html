@@ -61,16 +61,15 @@
             background-position: center; /* Центрируем изображение */
             background-repeat: no-repeat;
             background-size: 100% auto;
-            padding-top: 30%;
+            padding-top: 15%;
 
         }
         
         .left {
             background-image: url("../img/l1.webp");
-            padding: 0;
-            min-width: 550px;
-            min-height: 950px;
-            padding-top: 30%;
+
+            height: 100vh;
+            width: 30%;
             scale: 1;
             opacity: 0.4;
 
@@ -84,41 +83,11 @@
         }
         .right {
             background-image: url("../img/r.webp");
-            min-width: 500px;
-            min-height: 750px;
+            height: 100vh;
+            width: 30%;
         }
         
-        @media (min-width: 2000px) {
-            .mainPng {
-                padding-top: 7%;
-            }
 
-            .left {
-            min-width: 700px;
-            min-height: 850px;
-            transform: translateY(-10%); /* Поднимаем на половину высоты */
-
-
-        }
-        .centre {
-            min-width: 400px;
-            min-height: 300px;
-            
-            
-        }
-        .right {
-            min-width: 600px;
-            min-height: 850px;
-            transform: translateY(-10%); /* Поднимаем на половину высоты */
-        }
-        }
-
-        @media (min-width: 2500px) {
-            .mainPng {
-                padding-top: 15%;
-            }
-            
-        }
 
         @media (max-width: 1400px) {
             .left {
@@ -201,7 +170,14 @@
                 display: none;
                 
             }
-
+            .mainPng {
+                padding: 0;
+            }
+            .left {
+                height: 100vh;
+                width: 100vh;
+                scale: 1;
+            }
             .right {
                 display: none;
             }
