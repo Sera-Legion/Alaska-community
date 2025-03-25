@@ -104,7 +104,7 @@ nav a:hover {
     height: 55px;
     width: 50px;
     position: fixed;
-    z-index: 100;
+    z-index: 1000;
     top: 7%;
     transition: top 0.001s;
     cursor: pointer;
